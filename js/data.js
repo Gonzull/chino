@@ -18,7 +18,8 @@ const TONE_MAP = {
 };
 
 function computeTone(pin) {
-  for (const ch of pin) {
+  if (!pin) return 5;
+  for (const ch of String(pin)) {
     for (const set in TONE_MAP) {
       if (set.includes(ch)) return TONE_MAP[set];
     }
@@ -37,11 +38,11 @@ async function loadKnowledgeBase() {
   const [hsk1, hsk2, hsk3, hsk4, hsk5, diagnostico, sibilantes, aspiracion, correccion] = results;
 
   const vocab = [
-    ...hsk1.words.map(w => ({ ...w, level: 1 })),
-    ...hsk2.words.map(w => ({ ...w, level: 2 })),
-    ...hsk3.words.map(w => ({ ...w, level: 3 })),
-    ...hsk4.words.map(w => ({ ...w, level: 4 })),
-    ...hsk5.words.map(w => ({ ...w, level: 5 }))
+    ...hsk1.words.map(([han, pin, es]) => ({ level: 1, pin, han, es })),
+    ...hsk2.words.map(([han, pin, es]) => ({ level: 2, pin, han, es })),
+    ...hsk3.words.map(([han, pin, es]) => ({ level: 3, pin, han, es })),
+    ...hsk4.words.map(([han, pin, es]) => ({ level: 4, pin, han, es })),
+    ...hsk5.words.map(([han, pin, es]) => ({ level: 5, pin, han, es }))
   ].map(w => ({ ...w, tone: computeTone(w.pin) }));
 
   return {
