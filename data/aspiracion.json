@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updated": "2026-08-24",
+  "pairs": [
+    [
+      {
+        "han": "八",
+        "pin": "bā",
+        "es": "ocho"
+      },
+      {
+        "han": "趴",
+        "pin": "pā",
+        "es": "tirarse boca abajo"
+      }
+    ],
+    [
+      {
+        "han": "都",
+        "pin": "dū",
+        "es": "todo"
+      },
+      {
+        "han": "秃",
+        "pin": "tū",
+        "es": "calvo"
+      }
+    ],
+    [
+      {
+        "han": "哥",
+        "pin": "gē",
+        "es": "hermano mayor"
+      },
+      {
+        "han": "棵",
+        "pin": "kē",
+        "es": "(clasificador)"
+      }
+    ],
+    [
+      {
+        "han": "家",
+        "pin": "jiā",
+        "es": "hogar"
+      },
+      {
+        "han": "掐",
+        "pin": "qiā",
+        "es": "pellizcar"
+      }
+    ],
+    [
+      {
+        "han": "字",
+        "pin": "zì",
+        "es": "carácter"
+      },
+      {
+        "han": "次",
+        "pin": "cì",
+        "es": "vez"
+      }
+    ]
+  ]
+}

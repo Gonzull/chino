@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "updated": "2026-08-24",
+  "groups": [
+    [
+      {
+        "han": "十",
+        "pin": "shí",
+        "es": "diez"
+      },
+      {
+        "han": "思",
+        "pin": "sī",
+        "es": "pensar"
+      },
+      {
+        "han": "西",
+        "pin": "xī",
+        "es": "oeste"
+      }
+    ],
+    [
+      {
+        "han": "知",
+        "pin": "zhī",
+        "es": "saber"
+      },
+      {
+        "han": "姿",
+        "pin": "zī",
+        "es": "postura"
+      },
+      {
+        "han": "鸡",
+        "pin": "jī",
+        "es": "pollo"
+      }
+    ],
+    [
+      {
+        "han": "茶",
+        "pin": "chá",
+        "es": "té"
+      },
+      {
+        "han": "擦",
+        "pin": "cā",
+        "es": "limpiar"
+      },
+      {
+        "han": "掐",
+        "pin": "qiā",
+        "es": "pellizcar"
+      }
+    ],
+    [
+      {
+        "han": "书",
+        "pin": "shū",
+        "es": "libro"
+      },
+      {
+        "han": "苏",
+        "pin": "sū",
+        "es": "revivir"
+      },
+      {
+        "han": "须",
+        "pin": "xū",
+        "es": "barba"
+      }
+    ],
+    [
+      {
+        "han": "找",
+        "pin": "zhǎo",
+        "es": "buscar"
+      },
+      {
+        "han": "早",
+        "pin": "zǎo",
+        "es": "temprano"
+      },
+      {
+        "han": "脚",
+        "pin": "jiǎo",
+        "es": "pie"
+      }
+    ],
+    [
+      {
+        "han": "张",
+        "pin": "zhāng",
+        "es": "(clasif. hojas)"
+      },
+      {
+        "han": "脏",
+        "pin": "zāng",
+        "es": "sucio"
+      },
+      {
+        "han": "江",
+        "pin": "jiāng",
+        "es": "río"
+      }
+    ],
+    [
+      {
+        "han": "中",
+        "pin": "zhōng",
+        "es": "centro / China"
+      },
+      {
+        "han": "匆",
+        "pin": "cōng",
+        "es": "apresurado"
+      },
+      {
+        "han": "穷",
+        "pin": "qióng",
+        "es": "pobre"
+      }
+    ],
+    [
+      {
+        "han": "长",
+        "pin": "cháng",
+        "es": "largo"
+      },
+      {
+        "han": "藏",
+        "pin": "cáng",
+        "es": "esconder"
+      },
+      {
+        "han": "强",
+        "pin": "qiáng",
+        "es": "fuerte"
+      }
+    ],
+    [
+      {
+        "han": "除",
+        "pin": "chú",
+        "es": "excepto"
+      },
+      {
+        "han": "粗",
+        "pin": "cū",
+        "es": "grueso"
+      },
+      {
+        "han": "去",
+        "pin": "qù",
+        "es": "ir"
+      }
+    ],
+    [
+      {
+        "han": "迟",
+        "pin": "chí",
+        "es": "tarde"
+      },
+      {
+        "han": "词",
+        "pin": "cí",
+        "es": "palabra"
+      },
+      {
+        "han": "骑",
+        "pin": "qí",
+        "es": "montar"
+      }
+    ],
+    [
+      {
+        "han": "山",
+        "pin": "shān",
+        "es": "montaña"
+      },
+      {
+        "han": "三",
+        "pin": "sān",
+        "es": "tres"
+      },
+      {
+        "han": "先",
+        "pin": "xiān",
+        "es": "antes"
+      }
+    ],
+    [
+      {
+        "han": "伤",
+        "pin": "shāng",
+        "es": "herida"
+      },
+      {
+        "han": "桑",
+        "pin": "sāng",
+        "es": "morera"
+      },
+      {
+        "han": "香",
+        "pin": "xiāng",
+        "es": "fragante"
+      }
+    ],
+    [
+      {
+        "han": "是",
+        "pin": "shì",
+        "es": "ser"
+      },
+      {
+        "han": "四",
+        "pin": "sì",
+        "es": "cuatro"
+      },
+      {
+        "han": "洗",
+        "pin": "xǐ",
+        "es": "lavar"
+      }
+    ],
+    [
+      {
+        "han": "主",
+        "pin": "zhǔ",
+        "es": "dueño"
+      },
+      {
+        "han": "组",
+        "pin": "zǔ",
+        "es": "grupo"
+      },
+      {
+        "han": "举",
+        "pin": "jǔ",
+        "es": "levantar"
+      }
+    ]
+  ]
+}

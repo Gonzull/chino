@@ -1,0 +1,32 @@
+{
+  "name": "Entrenador 耳舌 Mandarín",
+  "short_name": "耳舌 Mandarín",
+  "description": "Entrenador de pronunciación y escritura de mandarín para hispanohablantes. Funciona offline.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#17130F",
+  "theme_color": "#17130F",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

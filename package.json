@@ -1,0 +1,16 @@
+{
+  "name": "entrenador-chino",
+  "version": "1.0.0",
+  "description": "Aplicación web profesional para hispanohablantes que practican mandarín. Incluye diagnóstico, ejercicios de tonos, sibilantes, aspiración, grabadora, corrección de voz y escritura de hanzi con repetición espaciada (SRS).",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

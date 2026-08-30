@@ -1,0 +1,105 @@
+import { speak } from './tts.js';
+
+function stripPunct(s) {
+  return s.replace(/[，。！？、\s.,!?]/g, '');
+}
+
+function initCorreccion(words) {
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const el = id => document.getElementById(id);
+  let recognition = null;
+  let current = null;
+  let score = 0,
+    total = 0;
+
+  function showWord() {
+    current = words[Math.floor(Math.random() * words.length)];
+    el('corrHan').textContent = current.han;
+    el('corrPinEs').textContent = `${current.pin} — ${current.es}`;
+    el('corrSoundTag').textContent = current.sound;
+    el('corrFeedback').innerHTML = '';
+    el('corrHeard').textContent = '';
+    el('corrStatus').textContent = 'Toca el micrófono y di la palabra claramente.';
+  }
+
+  function updateScore() {
+    el('corrScore').textContent = score;
+    el('corrTotal').textContent = total;
+  }
+
+  function evaluate(transcripts) {
+    total++;
+    const fb = el('corrFeedback');
+    el('corrHeard').textContent = 'Se reconoció: "' + transcripts.join('" / "') + '"';
+    const cleaned = transcripts.map(stripPunct);
+
+    if (cleaned.some(t => t.includes(current.han))) {
+      score++;
+      fb.innerHTML = `<span style="color:var(--jade)">✓ ¡Muy bien! Se reconoció "${current.han}" (${current.pin}) correctamente.</span>`;
+      el('corrStatus').textContent = 'Correcto — toca "Siguiente palabra" para continuar.';
+      updateScore();
+      return;
+    }
+
+    for (const conf of current.confusions) {
+      if (cleaned.some(t => t.includes(conf.han))) {
+        fb.innerHTML = `<span style="color:var(--seal)">✗ Casi — ${conf.note}</span>`;
+        el('corrStatus').textContent = 'Vuelve a intentar cuantas veces quieras.';
+        updateScore();
+        return;
+      }
+    }
+
+    fb.innerHTML = `<span style="color:var(--gold)">No pude relacionarlo con las opciones conocidas. Habla más cerca del micrófono, despacio y sin ruido de fondo, y vuelve a intentar.</span>`;
+    el('corrStatus').textContent = 'Intenta de nuevo.';
+    updateScore();
+  }
+
+  if (SpeechRec) {
+    recognition = new SpeechRec();
+    recognition.lang = 'zh-CN';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 5;
+
+    recognition.onstart = () => {
+      el('corrStatus').textContent = 'Escuchando…';
+      el('corrMicBtn').style.background = 'var(--seal)';
+    };
+    recognition.onresult = event => {
+      const alts = [];
+      for (let i = 0; i < event.results[0].length; i++) {
+        alts.push(event.results[0][i].transcript);
+      }
+      evaluate(alts);
+    };
+    recognition.onerror = event => {
+      const status = el('corrStatus');
+      if (event.error === 'no-speech') status.textContent = 'No se detectó voz. Intenta de nuevo.';
+      else if (event.error === 'not-allowed' || event.error === 'permission-denied')
+        status.textContent = 'Permiso de micrófono denegado. Revisa los ajustes del navegador.';
+      else if (event.error === 'network')
+        status.textContent = 'Error de red — el reconocimiento de voz necesita conexión a internet.';
+      else status.textContent = 'Ocurrió un error. Intenta de nuevo.';
+    };
+    recognition.onend = () => {
+      el('corrMicBtn').style.background = 'var(--jade)';
+    };
+
+    el('corrMicBtn').addEventListener('click', () => {
+      try {
+        recognition.start();
+      } catch (e) {}
+    });
+  } else {
+    el('corrUnsupported').style.display = 'flex';
+    el('corrMicBtn').disabled = true;
+    el('corrMicBtn').style.opacity = '.4';
+  }
+
+  el('corrListen').addEventListener('click', () => speak(current.han));
+  el('corrNext').addEventListener('click', showWord);
+  showWord();
+}
+
+export { initCorreccion };

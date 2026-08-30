@@ -1,0 +1,16 @@
+# Ignore local documentation files - not meant for public repo
+bitacora.md
+README.md
+
+# Ignore IDE and OS files
+.vscode/
+*.pem
+*.key
+.env
+
+# Ignore cache and temp files
+*.log
+*.tmp
+node_modules/
+/icons/*.png
+session-ses_fc94.md

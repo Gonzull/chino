@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "updated": "2026-08-24",
+  "items": [
+    {
+      "han": "妈妈骑马",
+      "pin": "Māma qí mǎ",
+      "es": "Mamá anda a caballo.",
+      "check": "¿Tu tono subió al final como en una pregunta en español?"
+    },
+    {
+      "han": "十四是十四，四十是四十",
+      "pin": "Shísì shì shísì, sìshí shì sìshí",
+      "es": "14 es 14, 40 es 40.",
+      "check": "¿\"sh\" y \"s\" sonaron parecidas?"
+    },
+    {
+      "han": "女人喝绿茶",
+      "pin": "Nǚrén hē lǜchá",
+      "es": "Las mujeres toman té verde.",
+      "check": "¿\"nǚ\" te salió como \"nu\"?"
+    },
+    {
+      "han": "他去上海旅行",
+      "pin": "Tā qù Shànghǎi lǚxíng",
+      "es": "Él viaja a Shanghái.",
+      "check": "¿\"q\", \"x\" y \"sh\" sonaron todas parecidas?"
+    },
+    {
+      "han": "三点半，上班",
+      "pin": "Sān diǎn bàn, shàngbān",
+      "es": "Las tres y media, ir al trabajo.",
+      "check": "¿\"-n\" y \"-ng\" sonaron igual?"
+    }
+  ]
+}

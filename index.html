@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<base href="/entrenador-mandarin/">
+  <meta name="theme-color" content="#17130F">
+  <meta name="description" content="Entrenador de mandarín para hispanohablantes: tonos, sibilantes, aspiración, escritura de hanzi con repetición espaciada y progreso offline.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="耳舌 Mandarín">
+  <title>耳朵与舌头 · Entrenador de Mandarín</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Noto+Serif+SC:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <svg class="tonecurves" viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20,40 L80,40" stroke="#CBA35C"/>
+    <path d="M20,110 Q50,65 80,60" stroke="#5C8C77"/>
+    <path d="M110,70 Q140,110 170,70" stroke="#B4432E"/>
+    <path d="M110,30 Q150,55 170,110" stroke="#F1E9DC"/>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">shadowing · tonos · confianza</p>
+    <h1>Entrenador <span class="han">耳舌</span> Mandarín</h1>
+    <p class="sub">Práctica de pronunciación y escritura de mandarín para hispanohablantes. Funciona offline — tu progreso se guarda solo en este dispositivo.</p>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button data-tab="diag" class="active">① Diagnóstico</button>
+  <button data-tab="tonos">② Tonos</button>
+  <button data-tab="sib">③ Sibilantes</button>
+  <button data-tab="asp">④ Aspiración</button>
+  <button data-tab="grab">⑤ Grabadora</button>
+  <button data-tab="corr">⑥ Corrección</button>
+  <button data-tab="hanzi">⑦ Escritura</button>
+  <button data-tab="prog">⑧ Progreso</button>
+</nav>
+
+<main class="wrap">
+
+  <div class="load-error" id="loadError">
+    &#9888;
+    <div>No se pudo cargar la base de conocimientos (<code>data/*.json</code>). Si abriste el archivo con doble clic, sirve la carpeta con un servidor local (<code>npx serve</code> o la extensión Live Server de VS Code), o visita la versión publicada en GitHub Pages.</div>
+  </div>
+
+  <section class="panel active" id="panel-diag">
+    <h2>Diagnóstico inicial</h2>
+    <p class="panel-desc">Escucha cada frase, luego repítela en voz alta y grábate con el celular. Marca las casillas si notas el problema descrito — eso te dice por dónde empezar.</p>
+    <div class="card" id="diagList"></div>
+  </section>
+
+  <section class="panel" id="panel-tonos">
+    <h2>Ejercicio de tonos</h2>
+    <p class="panel-desc">Escucha el carácter y elige el tono correcto. Vocabulario oficial de HSK1, HSK2 y HSK3 — filtra por nivel si quieres quedarte solo en lo que ya conoces.</p>
+    <div class="toneguide" id="toneGuide"></div>
+    <div class="levelfilter" id="toneLevelFilter">
+      <button class="lvlbtn active" data-level="all">Todos</button>
+      <button class="lvlbtn" data-level="1">HSK 1</button>
+      <button class="lvlbtn" data-level="2">HSK 2</button>
+      <button class="lvlbtn" data-level="3">HSK 3</button>
+      <button class="lvlbtn" data-level="4">HSK 4</button>
+      <button class="lvlbtn" data-level="5">HSK 5</button>
+    </div>
+    <div class="card">
+      <div class="scoreline"><span>Racha: <b id="toneStreak">0</b></span><span>Aciertos: <b id="toneScore">0</b>/<b id="toneTotal">0</b></span></div>
+      <div class="quiz-stage">
+        <div class="quiz-han" id="toneHan">…</div>
+        <div class="quiz-hint" id="toneWordMeta">Cargando vocabulario…</div>
+        <button class="bigplay" id="tonePlay">&#9654;</button>
+        <div class="choices" id="toneChoices"></div>
+        <div class="feedback" id="toneFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-sib">
+    <h2>Sibilantes y retroflejas</h2>
+    <p class="panel-desc">zh/ch/sh/r vs. z/c/s vs. j/q/x — el trío que todo hispanohablante mezcla al principio. Con énfasis extra en c/ch/q, que suelen quedar menos practicados. Escucha y elige cuál de las tres opciones sonó.</p>
+    <div class="card">
+      <div class="scoreline"><span>Racha: <b id="sibStreak">0</b></span><span>Aciertos: <b id="sibScore">0</b>/<b id="sibTotal">0</b></span></div>
+      <div class="quiz-stage">
+        <div class="quiz-hint" style="margin-bottom:22px;">Toca para escuchar la palabra</div>
+        <button class="bigplay" id="sibPlay">&#9654;</button>
+        <div class="choices" id="sibChoices"></div>
+        <div class="feedback" id="sibFeedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-asp">
+    <h2>Pares de aspiración</h2>
+    <p class="panel-desc">Compara cada par: la versión "sin aire" y la versión "con golpe de aire fuerte". Usa la prueba del pañuelo mientras escuchas y repites.</p>
+    <div class="tissue-tip">&#129531; <div><b>Prueba del pañuelo:</b> sostén un papel frente a tu boca. En la columna "aire fuerte" el papel se debe mover claramente; en "sin aire" casi no se mueve.</div></div>
+    <div class="card" id="aspList"></div>
+  </section>
+
+  <section class="panel" id="panel-grab">
+    <h2>Grabadora comparativa</h2>
+    <p class="panel-desc">Elige una palabra, escucha al nativo (voz sintética), grábate diciéndola, y compara ambos audios.</p>
+    <div class="card">
+      <select class="rec-select" id="recWordSelect"></select>
+      <div class="quiz-stage" style="padding-top:6px;">
+        <div class="quiz-han" id="recHan">…</div>
+        <button class="bigplay" id="recPlayNative">&#9654; Nativo</button>
+        <div class="rec-controls">
+          <button class="rec-btn record" id="recToggle">&#9679; Grabar</button>
+          <button class="rec-btn" id="recPlayMine" disabled>&#9654; Escuchar mi voz</button>
+        </div>
+        <audio id="recAudioPlayer" controls style="display:none;"></audio>
+        <p class="rec-note" id="recNote">Tu navegador te pedirá permiso para usar el micrófono la primera vez.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-corr">
+    <h2>Modo de corrección</h2>
+    <p class="panel-desc">Enfocado en zh / ch / sh / x / j — los sonidos que más se mezclan al venir del español. Di la palabra en voz alta; el reconocimiento de voz transcribe lo que detectó y te dice si sonó como otro sonido del grupo.</p>
+    <div id="corrUnsupported" class="tissue-tip" style="display:none;background:var(--seal-soft);border-color:var(--seal);">
+      &#9888; <div>Tu navegador no soporta reconocimiento de voz en la web. Esta función funciona mejor en <b>Chrome</b> (especialmente en Android). Las demás secciones de la app funcionan igual.</div>
+    </div>
+    <div class="card" id="corrCard">
+      <div class="scoreline"><span>Sonido objetivo: <b id="corrSoundTag">sh</b></span><span>Aciertos: <b id="corrScore">0</b>/<b id="corrTotal">0</b></span></div>
+      <div class="quiz-stage">
+        <div class="quiz-han" id="corrHan">十</div>
+        <div class="quiz-hint" id="corrPinEs">shí — diez</div>
+        <div style="display:flex;gap:10px;margin-bottom:18px;">
+          <button class="rec-btn" id="corrListen">&#9654; Escuchar modelo</button>
+        </div>
+        <button class="bigplay" id="corrMicBtn" style="background:var(--jade);">&#127908;</button>
+        <div class="rec-note" id="corrStatus">Toca el micrófono y di la palabra claramente.</div>
+        <div class="feedback" id="corrFeedback" style="min-height:44px;"></div>
+        <div class="rec-note" id="corrHeard" style="margin-top:2px;"></div>
+        <button class="rec-btn" id="corrNext" style="margin-top:18px;">Siguiente palabra &#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-hanzi">
+    <h2>Escritura de hanzi</h2>
+    <p class="panel-desc">Mira la animación del orden correcto de los trazos y practica dibujándolos tú mismo. El sistema corrige cada trazo en tiempo real, guarda tus errores por carácter y programa repasos automáticos (repetición espaciada) para que lo aprendido no se olvide.</p>
+    <div class="srs-stats">
+      <div class="srs-stat due"><b id="srsDue">0</b><span>por repasar hoy</span></div>
+      <div class="srs-stat"><b id="srsLearning">0</b><span>en estudio</span></div>
+      <div class="srs-stat mastered"><b id="srsMastered">0</b><span>dominados</span></div>
+    </div>
+    <div class="levelfilter" id="hanziLevelFilter">
+      <button class="lvlbtn active" data-level="all">Todos</button>
+      <button class="lvlbtn" data-level="1">HSK 1</button>
+      <button class="lvlbtn" data-level="2">HSK 2</button>
+      <button class="lvlbtn" data-level="3">HSK 3</button>
+      <button class="lvlbtn" data-level="4">HSK 4</button>
+      <button class="lvlbtn" data-level="5">HSK 5</button>
+      <button class="lvlbtn due-btn" data-level="due">Repaso</button>
+    </div>
+    <div class="card" style="margin-bottom:14px;">
+      <label for="hanziSearch" style="font-size:12px;color:var(--text-dim);display:block;margin-bottom:8px;">Buscar carácter específico (por hanzi, pinyin o significado)</label>
+      <input type="text" id="hanziSearch" class="rec-select" placeholder="ej. 你 / ni / hola" autocomplete="off">
+      <div id="hanziSearchResults"></div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="quiz-hint" id="hanziMeta">HSK1 · nǐ — tú</div>
+      <div id="hanziTarget" style="width:260px;height:260px;margin:14px auto;background:var(--surface-2);border-radius:14px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;"></div>
+      <div class="hanzi-srs-info" id="hanziSrsInfo"></div>
+      <div class="rec-controls">
+        <button class="rec-btn" id="hanziShow">&#9654; Ver animación</button>
+        <button class="rec-btn" id="hanziQuiz" style="border-color:var(--jade);color:var(--jade);">Practicar trazos</button>
+        <button class="rec-btn" id="hanziNext">Siguiente &#8594;</button>
+      </div>
+      <div class="rec-note" id="hanziStatus">Toca "Ver animación" para ver el orden correcto, luego practica.</div>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-prog">
+    <h2>Tu progreso</h2>
+    <p class="panel-desc">Se guarda en este dispositivo/navegador únicamente.</p>
+    <div class="stat-grid">
+      <div class="stat"><b id="statStreak">0</b><span>días de racha</span></div>
+      <div class="stat"><b id="statSessions">0</b><span>sesiones registradas</span></div>
+      <div class="stat"><b id="statChars">0</b><span>caracteres practicados</span></div>
+      <div class="stat"><b id="statMastered">0</b><span>caracteres dominados</span></div>
+    </div>
+    <button class="logbtn" id="logSession">Registrar sesión de hoy</button>
+    <div class="card" style="margin-top:18px;">
+      <h2 style="font-size:16px;margin-bottom:14px;">Horario semanal sugerido</h2>
+      <div class="schedule-row"><b>Lun / Mié / Vie</b><span>30 min — Tonos + Sibilantes + Escritura (repaso)</span></div>
+      <div class="schedule-row"><b>Mar / Jue</b><span>25 min — Shadowing con audio propio</span></div>
+      <div class="schedule-row"><b>Sábado</b><span>30-40 min — Conversación / role-play</span></div>
+      <div class="schedule-row"><b>Domingo</b><span>20 min — Grabadora + repaso general</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  入乡随音 · practica un poco todos los días
+  <span class="kbmeta" id="kbMeta"></span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
