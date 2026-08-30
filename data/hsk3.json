@@ -1,95 +1,1472 @@
 {
-  "version": 1,
-  "updated": "2026-08-24",
+  "version": "2",
+  "updated": "2026-08-31",
   "level": 3,
   "words": [
-    ["阿姨","āyí","tía (no familiar)"],["啊","a","ah (partícula)"],["矮","ǎi","bajo (estatura)"],
-    ["爱好","àihào","afición"],["安静","ānjìng","tranquilo / silencio"],["把","bǎ","(partícula gramatical)"],
-    ["班","bān","clase / grupo"],["搬","bān","mudarse / mover"],["半","bàn","mitad"],
-    ["办法","bànfǎ","manera / método"],["办公室","bàngōngshì","oficina"],["帮忙","bāngmáng","ayudar"],
-    ["包","bāo","paquete / bolso"],["饱","bǎo","lleno (de comer)"],["北方","běifāng","norte"],
-    ["被","bèi","(partícula pasiva)"],["鼻子","bízi","nariz"],["比较","bǐjiào","comparar / bastante"],
-    ["比赛","bǐsài","competencia"],["笔记本","bǐjìběn","cuaderno"],["必须","bìxū","deber / tener que"],
-    ["变化","biànhuà","cambio"],["别人","biéren","otras personas"],["冰箱","bīngxiāng","refrigerador"],
-    ["菜单","càidān","menú"],["参加","cānjiā","participar"],["草","cǎo","pasto"],["层","céng","piso / capa"],
-    ["差","chà","malo / faltar"],["超市","chāoshì","supermercado"],["衬衫","chènshān","camisa"],
-    ["成绩","chéngjì","calificación / logro"],["城市","chéngshì","ciudad"],["迟到","chídào","llegar tarde"],
-    ["除了","chúle","excepto"],["船","chuán","barco"],["春","chūn","primavera"],["词典","cídiǎn","diccionario"],
-    ["聪明","cōngming","inteligente"],["打扫","dǎsǎo","limpiar"],["打算","dǎsuàn","planear"],
-    ["带","dài","traer / cinturón"],["担心","dānxīn","preocuparse"],["蛋糕","dàngāo","pastel"],
-    ["当然","dāngrán","por supuesto"],["地","de","(partícula adverbial)"],["灯","dēng","lámpara"],
-    ["地方","dìfang","lugar"],["地铁","dìtiě","metro"],["地图","dìtú","mapa"],["电梯","diàntī","ascensor"],
-    ["电子邮件","diànzǐyóujiàn","correo electrónico"],["东","dōng","este"],["冬","dōng","invierno"],
-    ["动物","dòngwù","animal"],["短","duǎn","corto"],["段","duàn","párrafo / segmento"],
-    ["锻炼","duànliàn","ejercitarse"],["多么","duōme","qué tan / cuán"],["饿","è","hambriento"],
-    ["耳朵","ěrduo","oreja"],["发","fā","enviar / emitir"],["发烧","fāshāo","tener fiebre"],
-    ["发现","fāxiàn","descubrir"],["方便","fāngbiàn","conveniente"],["放","fàng","poner / colocar"],
-    ["放心","fàngxīn","quedarse tranquilo"],["分","fēn","minuto / dividir"],["附近","fùjìn","cerca / alrededores"],
-    ["复习","fùxí","repasar"],["干净","gānjìng","limpio"],["感兴趣","gǎnxìngqù","estar interesado"],
-    ["感冒","gǎnmào","resfriarse"],["刚才","gāngcái","hace un momento"],["个子","gèzi","estatura"],
-    ["跟","gēn","con"],[" según","gēnjù","según"],["更","gèng","más"],["公斤","gōngjīn","kilogramo"],
-    ["公园","gōngyuán","parque"],["故事","gùshi","historia / cuento"],["刮风","guāfēng","soplar viento"],
-    ["关","guān","cerrar"],["关系","guānxì","relación"],["关心","guānxīn","preocuparse por / cuidar"],
-    ["关于","guānyú","acerca de"],["国家","guójiā","país"],["过去","guòqù","el pasado"],["过","guò","pasar"],
-    ["还是","háishì","o (en preguntas) / todavía"],["害怕","hàipà","tener miedo"],["黑板","hēibǎn","pizarra"],
-    ["后来","hòulái","después / luego"],["护照","hùzhào","pasaporte"],["关于","huángěi","devolver (algo a alguien)"],
-    ["环境","huánjìng","ambiente / entorno"],["换","huàn","cambiar"],["黄河","huánghé","Río Amarillo"],["回答","huídá","responder"],
-    ["会议","huìyì","reunión"],["或者","huòzhě","o / o bien"],["几乎","jīhū","casi"],
-    ["机会","jīhuì","oportunidad"],["极","jí","extremadamente"],["记得","jìde","recordar"],
-    ["季节","jìjié","estación (del año)"],["检查","jiǎnchá","revisar / inspeccionar"],["简单","jiǎndān","simple"],["健康","jiànkāng","saludable"],
-    ["见面","jiànmiàn","reunirse / verse"],["讲","jiǎng","hablar / explicar"],["教","jiāo","enseñar"],["角","jiǎo","esquina / cuerno"],
-    ["脚","jiǎo","pie"],["接","jiē","recoger / recibir"],["街道","jiēdào","calle"],["结婚","jiéhūn","casarse"],
-    ["结束","jiéshù","terminar"],["节目","jiémù","programa"],["节日","jiérì","festividad"],
-    ["解决","jiějué","resolver"],["借","jiè","pedir prestado"],["经常","jīngcháng","frecuentemente"],
-    ["经过","jīngguò","pasar por / a través de"],["经理","jīnglǐ","gerente"],["久","jiǔ","mucho tiempo"],
-    ["旧","jiù","viejo / usado"],["句子","jùzi","oración (gramática)"],["决定","juédìng","decisión / decidir"],
-    ["渴","kě","sediento"],["可爱","kěài","adorable"],["刻","kè","cuarto de hora"],["客人","kèrén","invitado"],
-    ["空调","kōngtiáo","aire acondicionado"],["口","kǒu","boca"],["哭","kū","llorar"],
-    ["裤子","kùzi","pantalones"],["筷子","kuàizi","palillos"],["蓝","lán","azul"],["老","lǎo","viejo"],
-    ["离开","líkāi","irse / dejar"],["礼物","lǐwù","regalo"],["历史","lìshǐ","historia"],["脸","liǎn","cara"],
-    ["聊天","liáotiān","charlar"],["练习","liànxí","practicar"],["辆","liàng","(clasif. de vehículos)"],
-    ["了解","liǎojiě","comprender / entender"],["邻居","línjū","vecino"],["留学","liúxué","estudiar en el extranjero"],
-    ["楼","lóu","piso / edificio"],["绿","lǜ","verde"],["马上","mǎshàng","enseguida"],["满意","mǎnyì","satisfecho"],
-    ["帽子","màozi","sombrero"],["米","mǐ","arroz / metro"],["面包","miànbāo","pan"],["明白","míngbai","entender"],["拿","ná","tomar / agarrar"],
-    ["奶奶","nǎinai","abuela"],["南","nán","sur"],["难","nán","difícil"],["难过","nánguò","triste"],
-    ["年级","niánjí","grado (escolar)"],["年轻","niánqīng","joven"],["鸟","niǎo","pájaro"],
-    ["努力","nǔlì","esforzarse"],["爬山","páshān","subir montaña"],["盘子","pánzi","plato"],
-    ["胖","pàng","gordo"],["啤酒","píjiǔ","cerveza"],["皮鞋","píxié","zapatos de cuero"],
-    ["瓶子","píngzi","botella"],["其实","qíshí","en realidad"],["其他","qítā","otro / demás"],
-    ["奇怪","qíguài","extraño"],["起来","qǐlái","levantarse"],["起飞","qǐfēi","despegar"],
-    ["清楚","qīngchu","claro"],["请假","qǐngjià","pedir permiso / licencia"],["秋","qiū","otoño"],
-    ["裙子","qúnzi","falda"],["然后","ránhòu","luego"],["热情","rèqíng","entusiasmo / amabilidad"],
-    ["认为","rènwéi","pensar / considerar"],["认真","rènzhēn","serio / aplicado"],["容易","róngyì","fácil"],
-    ["如果","rúguǒ","si (condicional)"],["伞","sǎn","paraguas"],["上网","shàngwǎng","navegar en internet"],
-    ["生气","shēngqì","enojarse"],["声音","shēngyīn","sonido / voz"],["试","shì","probar / intentar"],
-    ["世界","shìjiè","mundo"],["瘦","shòu","delgado"],["舒服","shūfu","cómodo"],["叔叔","shūshu","tío"],
-    ["树","shù","árbol"],["数学","shùxué","matemáticas"],["刷牙","shuāyá","cepillarse los dientes"],
-    ["双","shuāng","par"],["水平","shuǐpíng","nivel"],["司机","sījī","conductor"],["太阳","tàiyáng","sol"],
-    ["特别","tèbié","especialmente"],["疼","téng","doler"],["提高","tígāo","mejorar / aumentar"],
-    ["体育","tǐyù","deporte / educación física"],["甜","tián","dulce"],["条","tiáo","(clasif. cosas alargadas)"],
-    ["同事","tóngshì","colega"],["同意","tóngyì","estar de acuerdo"],["头发","tóufa","cabello"],
-    ["突然","tūrán","de repente"],["图书馆","túshūguǎn","biblioteca"],["腿","tuǐ","pierna"],
-    ["完成","wánchéng","completar"],["碗","wǎn","tazón"],["万","wàn","diez mil"],["忘记","wàngjì","olvidar"],
-    ["为","wèi","por / para"],["为了","wèile","con el fin de"],["位","wèi","(clasif. de personas)"],
-    ["文化","wénhuà","cultura"],["习惯","xíguàn","hábito / acostumbrarse"],["洗手间","xǐshǒujiān","baño"],
-    ["洗澡","xǐzǎo","ducharse"],["夏","xià","verano"],["先","xiān","primero"],["香蕉","xiāngjiāo","plátano"],
-    ["相信","xiāngxìn","creer"],["向","xiàng","hacia"],["像","xiàng","parecerse / como"],
-    ["小心","xiǎoxīn","tener cuidado"],["校长","xiàozhǎng","director (de escuela)"],["新闻","xīnwén","noticias"],
-    ["新鲜","xīnxiān","fresco"],["信用卡","xìnyòngkǎ","tarjeta de crédito"],["行李箱","xínglixiāng","maleta"],
-    ["熊猫","xióngmāo","panda"],["需要","xūyào","necesitar"],["选择","xuǎnzé","elegir"],
-    ["要求","yāoqiú","requisito / exigir"],["爷爷","yéye","abuelo"],["一定","yídìng","definitivamente"],
-    ["一共","yígòng","en total"],["一会儿","yíhuìr","un rato"],["一样","yíyàng","igual"],
-    ["以前","yǐqián","antes"],["一般","yìbān","generalmente"],["一边","yìbiān","mientras / a un lado"],
-    ["一直","yìzhí","siempre / directamente"],["音乐","yīnyuè","música"],["银行","yínháng","banco"],
-    ["饮料","yǐnliào","bebida"],["应该","yīnggāi","deber (de)"],["影响","yǐngxiǎng","influencia / influir"],
-    ["用","yòng","usar"],["游戏","yóuxì","juego"],["有名","yǒumíng","famoso"],["又","yòu","de nuevo"],
-    ["遇到","yùdào","encontrarse con"],["愿意","yuànyì","estar dispuesto"],["月亮","yuèliang","luna"],
-    ["越","yuè","cuanto más"],["站","zhàn","estación / parada"],["长高","zhǎnggāo","crecer (en altura)"],
-    ["着急","zháojí","estar ansioso"],["照顾","zhàogù","cuidar"],["照片","zhàopiàn","foto"],
-    ["照相机","zhàoxiàngjī","cámara"],["只是","zhǐshì","solo / solamente"],["中间","zhōngjiān","en medio"],
-    ["终于","zhōngyú","finalmente"],["种类","zhǒnglèi","tipo / especie"],["重要","zhòngyào","importante"],
-    ["周末","zhōumò","fin de semana"],["主要","zhǔyào","principal"],["注意","zhùyì","poner atención"],
-    ["自己","zìjǐ","uno mismo"],["总是","zǒngshì","siempre"],["嘴","zuǐ","boca"],["最后","zuìhòu","al final"],
-    ["最近","zuìjìn","recientemente"],["作业","zuòyè","tarea"]
+    [
+      "阿姨",
+      "āyí",
+      "tía (no familiar)"
+    ],
+    [
+      "啊",
+      "a",
+      "ah (partícula)"
+    ],
+    [
+      "矮",
+      "ǎi",
+      "bajo (estatura)"
+    ],
+    [
+      "爱好",
+      "àihào",
+      "afición"
+    ],
+    [
+      "安静",
+      "ānjìng",
+      "tranquilo / silencio"
+    ],
+    [
+      "把",
+      "bǎ",
+      "(partícula gramatical)"
+    ],
+    [
+      "班",
+      "bān",
+      "clase / grupo"
+    ],
+    [
+      "搬",
+      "bān",
+      "mudarse / mover"
+    ],
+    [
+      "半",
+      "bàn",
+      "mitad"
+    ],
+    [
+      "办法",
+      "bànfǎ",
+      "manera / método"
+    ],
+    [
+      "办公室",
+      "bàngōngshì",
+      "oficina"
+    ],
+    [
+      "帮忙",
+      "bāngmáng",
+      "ayudar"
+    ],
+    [
+      "包",
+      "bāo",
+      "paquete / bolso"
+    ],
+    [
+      "饱",
+      "bǎo",
+      "lleno (de comer)"
+    ],
+    [
+      "北方",
+      "běifāng",
+      "norte"
+    ],
+    [
+      "被",
+      "bèi",
+      "(partícula pasiva)"
+    ],
+    [
+      "鼻子",
+      "bízi",
+      "nariz"
+    ],
+    [
+      "比较",
+      "bǐjiào",
+      "comparar / bastante"
+    ],
+    [
+      "比赛",
+      "bǐsài",
+      "competencia"
+    ],
+    [
+      "笔记本",
+      "bǐjìběn",
+      "cuaderno"
+    ],
+    [
+      "必须",
+      "bìxū",
+      "deber / tener que"
+    ],
+    [
+      "变化",
+      "biànhuà",
+      "cambio"
+    ],
+    [
+      "别人",
+      "biéren",
+      "otras personas"
+    ],
+    [
+      "冰箱",
+      "bīngxiāng",
+      "refrigerador"
+    ],
+    [
+      "菜单",
+      "càidān",
+      "menú"
+    ],
+    [
+      "参加",
+      "cānjiā",
+      "participar"
+    ],
+    [
+      "草",
+      "cǎo",
+      "pasto"
+    ],
+    [
+      "层",
+      "céng",
+      "piso / capa"
+    ],
+    [
+      "差",
+      "chà",
+      "malo / faltar"
+    ],
+    [
+      "超市",
+      "chāoshì",
+      "supermercado"
+    ],
+    [
+      "衬衫",
+      "chènshān",
+      "camisa"
+    ],
+    [
+      "成绩",
+      "chéngjì",
+      "calificación / logro"
+    ],
+    [
+      "城市",
+      "chéngshì",
+      "ciudad"
+    ],
+    [
+      "迟到",
+      "chídào",
+      "llegar tarde"
+    ],
+    [
+      "除了",
+      "chúle",
+      "excepto"
+    ],
+    [
+      "船",
+      "chuán",
+      "barco"
+    ],
+    [
+      "春",
+      "chūn",
+      "primavera"
+    ],
+    [
+      "词典",
+      "cídiǎn",
+      "diccionario"
+    ],
+    [
+      "聪明",
+      "cōngming",
+      "inteligente"
+    ],
+    [
+      "打扫",
+      "dǎsǎo",
+      "limpiar"
+    ],
+    [
+      "打算",
+      "dǎsuàn",
+      "planear"
+    ],
+    [
+      "带",
+      "dài",
+      "traer / cinturón"
+    ],
+    [
+      "担心",
+      "dānxīn",
+      "preocuparse"
+    ],
+    [
+      "蛋糕",
+      "dàngāo",
+      "pastel"
+    ],
+    [
+      "当然",
+      "dāngrán",
+      "por supuesto"
+    ],
+    [
+      "地",
+      "de",
+      "(partícula adverbial)"
+    ],
+    [
+      "灯",
+      "dēng",
+      "lámpara"
+    ],
+    [
+      "地方",
+      "dìfang",
+      "lugar"
+    ],
+    [
+      "地铁",
+      "dìtiě",
+      "metro"
+    ],
+    [
+      "地图",
+      "dìtú",
+      "mapa"
+    ],
+    [
+      "电梯",
+      "diàntī",
+      "ascensor"
+    ],
+    [
+      "电子邮件",
+      "diànzǐyóujiàn",
+      "correo electrónico"
+    ],
+    [
+      "东",
+      "dōng",
+      "este"
+    ],
+    [
+      "冬",
+      "dōng",
+      "invierno"
+    ],
+    [
+      "动物",
+      "dòngwù",
+      "animal"
+    ],
+    [
+      "短",
+      "duǎn",
+      "corto"
+    ],
+    [
+      "段",
+      "duàn",
+      "párrafo / segmento"
+    ],
+    [
+      "锻炼",
+      "duànliàn",
+      "ejercitarse"
+    ],
+    [
+      "多么",
+      "duōme",
+      "qué tan / cuán"
+    ],
+    [
+      "饿",
+      "è",
+      "hambriento"
+    ],
+    [
+      "耳朵",
+      "ěrduo",
+      "oreja"
+    ],
+    [
+      "发",
+      "fā",
+      "enviar / emitir"
+    ],
+    [
+      "发烧",
+      "fāshāo",
+      "tener fiebre"
+    ],
+    [
+      "发现",
+      "fāxiàn",
+      "descubrir"
+    ],
+    [
+      "方便",
+      "fāngbiàn",
+      "conveniente"
+    ],
+    [
+      "放",
+      "fàng",
+      "poner / colocar"
+    ],
+    [
+      "放心",
+      "fàngxīn",
+      "quedarse tranquilo"
+    ],
+    [
+      "分",
+      "fēn",
+      "minuto / dividir"
+    ],
+    [
+      "附近",
+      "fùjìn",
+      "cerca / alrededores"
+    ],
+    [
+      "复习",
+      "fùxí",
+      "repasar"
+    ],
+    [
+      "干净",
+      "gānjìng",
+      "limpio"
+    ],
+    [
+      "感兴趣",
+      "gǎnxìngqù",
+      "estar interesado"
+    ],
+    [
+      "感冒",
+      "gǎnmào",
+      "resfriarse"
+    ],
+    [
+      "刚才",
+      "gāngcái",
+      "hace un momento"
+    ],
+    [
+      "个子",
+      "gèzi",
+      "estatura"
+    ],
+    [
+      "跟",
+      "gēn",
+      "con"
+    ],
+    [
+      " según",
+      "gēnjù",
+      "según"
+    ],
+    [
+      "更",
+      "gèng",
+      "más"
+    ],
+    [
+      "公斤",
+      "gōngjīn",
+      "kilogramo"
+    ],
+    [
+      "公园",
+      "gōngyuán",
+      "parque"
+    ],
+    [
+      "故事",
+      "gùshi",
+      "historia / cuento"
+    ],
+    [
+      "刮风",
+      "guāfēng",
+      "soplar viento"
+    ],
+    [
+      "关",
+      "guān",
+      "cerrar"
+    ],
+    [
+      "关系",
+      "guānxì",
+      "relación"
+    ],
+    [
+      "关心",
+      "guānxīn",
+      "preocuparse por / cuidar"
+    ],
+    [
+      "关于",
+      "guānyú",
+      "acerca de"
+    ],
+    [
+      "国家",
+      "guójiā",
+      "país"
+    ],
+    [
+      "过去",
+      "guòqù",
+      "el pasado"
+    ],
+    [
+      "过",
+      "guò",
+      "pasar"
+    ],
+    [
+      "还是",
+      "háishì",
+      "o (en preguntas) / todavía"
+    ],
+    [
+      "害怕",
+      "hàipà",
+      "tener miedo"
+    ],
+    [
+      "黑板",
+      "hēibǎn",
+      "pizarra"
+    ],
+    [
+      "后来",
+      "hòulái",
+      "después / luego"
+    ],
+    [
+      "护照",
+      "hùzhào",
+      "pasaporte"
+    ],
+    [
+      "关于",
+      "huángěi",
+      "devolver (algo a alguien)"
+    ],
+    [
+      "环境",
+      "huánjìng",
+      "ambiente / entorno"
+    ],
+    [
+      "换",
+      "huàn",
+      "cambiar"
+    ],
+    [
+      "黄河",
+      "huánghé",
+      "Río Amarillo"
+    ],
+    [
+      "回答",
+      "huídá",
+      "responder"
+    ],
+    [
+      "会议",
+      "huìyì",
+      "reunión"
+    ],
+    [
+      "或者",
+      "huòzhě",
+      "o / o bien"
+    ],
+    [
+      "几乎",
+      "jīhū",
+      "casi"
+    ],
+    [
+      "机会",
+      "jīhuì",
+      "oportunidad"
+    ],
+    [
+      "极",
+      "jí",
+      "extremadamente"
+    ],
+    [
+      "记得",
+      "jìde",
+      "recordar"
+    ],
+    [
+      "季节",
+      "jìjié",
+      "estación (del año)"
+    ],
+    [
+      "检查",
+      "jiǎnchá",
+      "revisar / inspeccionar"
+    ],
+    [
+      "简单",
+      "jiǎndān",
+      "simple"
+    ],
+    [
+      "健康",
+      "jiànkāng",
+      "saludable"
+    ],
+    [
+      "见面",
+      "jiànmiàn",
+      "reunirse / verse"
+    ],
+    [
+      "讲",
+      "jiǎng",
+      "hablar / explicar"
+    ],
+    [
+      "教",
+      "jiāo",
+      "enseñar"
+    ],
+    [
+      "角",
+      "jiǎo",
+      "esquina / cuerno"
+    ],
+    [
+      "脚",
+      "jiǎo",
+      "pie"
+    ],
+    [
+      "接",
+      "jiē",
+      "recoger / recibir"
+    ],
+    [
+      "街道",
+      "jiēdào",
+      "calle"
+    ],
+    [
+      "结婚",
+      "jiéhūn",
+      "casarse"
+    ],
+    [
+      "结束",
+      "jiéshù",
+      "terminar"
+    ],
+    [
+      "节目",
+      "jiémù",
+      "programa"
+    ],
+    [
+      "节日",
+      "jiérì",
+      "festividad"
+    ],
+    [
+      "解决",
+      "jiějué",
+      "resolver"
+    ],
+    [
+      "借",
+      "jiè",
+      "pedir prestado"
+    ],
+    [
+      "经常",
+      "jīngcháng",
+      "frecuentemente"
+    ],
+    [
+      "经过",
+      "jīngguò",
+      "pasar por / a través de"
+    ],
+    [
+      "经理",
+      "jīnglǐ",
+      "gerente"
+    ],
+    [
+      "久",
+      "jiǔ",
+      "mucho tiempo"
+    ],
+    [
+      "旧",
+      "jiù",
+      "viejo / usado"
+    ],
+    [
+      "句子",
+      "jùzi",
+      "oración (gramática)"
+    ],
+    [
+      "决定",
+      "juédìng",
+      "decisión / decidir"
+    ],
+    [
+      "渴",
+      "kě",
+      "sediento"
+    ],
+    [
+      "可爱",
+      "kěài",
+      "adorable"
+    ],
+    [
+      "刻",
+      "kè",
+      "cuarto de hora"
+    ],
+    [
+      "客人",
+      "kèrén",
+      "invitado"
+    ],
+    [
+      "空调",
+      "kōngtiáo",
+      "aire acondicionado"
+    ],
+    [
+      "口",
+      "kǒu",
+      "boca"
+    ],
+    [
+      "哭",
+      "kū",
+      "llorar"
+    ],
+    [
+      "裤子",
+      "kùzi",
+      "pantalones"
+    ],
+    [
+      "筷子",
+      "kuàizi",
+      "palillos"
+    ],
+    [
+      "蓝",
+      "lán",
+      "azul"
+    ],
+    [
+      "老",
+      "lǎo",
+      "viejo"
+    ],
+    [
+      "离开",
+      "líkāi",
+      "irse / dejar"
+    ],
+    [
+      "礼物",
+      "lǐwù",
+      "regalo"
+    ],
+    [
+      "历史",
+      "lìshǐ",
+      "historia"
+    ],
+    [
+      "脸",
+      "liǎn",
+      "cara"
+    ],
+    [
+      "聊天",
+      "liáotiān",
+      "charlar"
+    ],
+    [
+      "练习",
+      "liànxí",
+      "practicar"
+    ],
+    [
+      "辆",
+      "liàng",
+      "(clasif. de vehículos)"
+    ],
+    [
+      "了解",
+      "liǎojiě",
+      "comprender / entender"
+    ],
+    [
+      "邻居",
+      "línjū",
+      "vecino"
+    ],
+    [
+      "留学",
+      "liúxué",
+      "estudiar en el extranjero"
+    ],
+    [
+      "楼",
+      "lóu",
+      "piso / edificio"
+    ],
+    [
+      "绿",
+      "lǜ",
+      "verde"
+    ],
+    [
+      "马上",
+      "mǎshàng",
+      "enseguida"
+    ],
+    [
+      "满意",
+      "mǎnyì",
+      "satisfecho"
+    ],
+    [
+      "帽子",
+      "màozi",
+      "sombrero"
+    ],
+    [
+      "米",
+      "mǐ",
+      "arroz / metro"
+    ],
+    [
+      "面包",
+      "miànbāo",
+      "pan"
+    ],
+    [
+      "明白",
+      "míngbai",
+      "entender"
+    ],
+    [
+      "拿",
+      "ná",
+      "tomar / agarrar"
+    ],
+    [
+      "奶奶",
+      "nǎinai",
+      "abuela"
+    ],
+    [
+      "南",
+      "nán",
+      "sur"
+    ],
+    [
+      "难",
+      "nán",
+      "difícil"
+    ],
+    [
+      "难过",
+      "nánguò",
+      "triste"
+    ],
+    [
+      "年级",
+      "niánjí",
+      "grado (escolar)"
+    ],
+    [
+      "年轻",
+      "niánqīng",
+      "joven"
+    ],
+    [
+      "鸟",
+      "niǎo",
+      "pájaro"
+    ],
+    [
+      "努力",
+      "nǔlì",
+      "esforzarse"
+    ],
+    [
+      "爬山",
+      "páshān",
+      "subir montaña"
+    ],
+    [
+      "盘子",
+      "pánzi",
+      "plato"
+    ],
+    [
+      "胖",
+      "pàng",
+      "gordo"
+    ],
+    [
+      "啤酒",
+      "píjiǔ",
+      "cerveza"
+    ],
+    [
+      "皮鞋",
+      "píxié",
+      "zapatos de cuero"
+    ],
+    [
+      "瓶子",
+      "píngzi",
+      "botella"
+    ],
+    [
+      "其实",
+      "qíshí",
+      "en realidad"
+    ],
+    [
+      "其他",
+      "qítā",
+      "otro / demás"
+    ],
+    [
+      "奇怪",
+      "qíguài",
+      "extraño"
+    ],
+    [
+      "起来",
+      "qǐlái",
+      "levantarse"
+    ],
+    [
+      "起飞",
+      "qǐfēi",
+      "despegar"
+    ],
+    [
+      "清楚",
+      "qīngchu",
+      "claro"
+    ],
+    [
+      "请假",
+      "qǐngjià",
+      "pedir permiso / licencia"
+    ],
+    [
+      "秋",
+      "qiū",
+      "otoño"
+    ],
+    [
+      "裙子",
+      "qúnzi",
+      "falda"
+    ],
+    [
+      "然后",
+      "ránhòu",
+      "luego"
+    ],
+    [
+      "热情",
+      "rèqíng",
+      "entusiasmo / amabilidad"
+    ],
+    [
+      "认为",
+      "rènwéi",
+      "pensar / considerar"
+    ],
+    [
+      "认真",
+      "rènzhēn",
+      "serio / aplicado"
+    ],
+    [
+      "容易",
+      "róngyì",
+      "fácil"
+    ],
+    [
+      "如果",
+      "rúguǒ",
+      "si (condicional)"
+    ],
+    [
+      "伞",
+      "sǎn",
+      "paraguas"
+    ],
+    [
+      "上网",
+      "shàngwǎng",
+      "navegar en internet"
+    ],
+    [
+      "生气",
+      "shēngqì",
+      "enojarse"
+    ],
+    [
+      "声音",
+      "shēngyīn",
+      "sonido / voz"
+    ],
+    [
+      "试",
+      "shì",
+      "probar / intentar"
+    ],
+    [
+      "世界",
+      "shìjiè",
+      "mundo"
+    ],
+    [
+      "瘦",
+      "shòu",
+      "delgado"
+    ],
+    [
+      "舒服",
+      "shūfu",
+      "cómodo"
+    ],
+    [
+      "叔叔",
+      "shūshu",
+      "tío"
+    ],
+    [
+      "树",
+      "shù",
+      "árbol"
+    ],
+    [
+      "数学",
+      "shùxué",
+      "matemáticas"
+    ],
+    [
+      "刷牙",
+      "shuāyá",
+      "cepillarse los dientes"
+    ],
+    [
+      "双",
+      "shuāng",
+      "par"
+    ],
+    [
+      "水平",
+      "shuǐpíng",
+      "nivel"
+    ],
+    [
+      "司机",
+      "sījī",
+      "conductor"
+    ],
+    [
+      "太阳",
+      "tàiyáng",
+      "sol"
+    ],
+    [
+      "特别",
+      "tèbié",
+      "especialmente"
+    ],
+    [
+      "疼",
+      "téng",
+      "doler"
+    ],
+    [
+      "提高",
+      "tígāo",
+      "mejorar / aumentar"
+    ],
+    [
+      "体育",
+      "tǐyù",
+      "deporte / educación física"
+    ],
+    [
+      "甜",
+      "tián",
+      "dulce"
+    ],
+    [
+      "条",
+      "tiáo",
+      "(clasif. cosas alargadas)"
+    ],
+    [
+      "同事",
+      "tóngshì",
+      "colega"
+    ],
+    [
+      "同意",
+      "tóngyì",
+      "estar de acuerdo"
+    ],
+    [
+      "头发",
+      "tóufa",
+      "cabello"
+    ],
+    [
+      "突然",
+      "tūrán",
+      "de repente"
+    ],
+    [
+      "图书馆",
+      "túshūguǎn",
+      "biblioteca"
+    ],
+    [
+      "腿",
+      "tuǐ",
+      "pierna"
+    ],
+    [
+      "完成",
+      "wánchéng",
+      "completar"
+    ],
+    [
+      "碗",
+      "wǎn",
+      "tazón"
+    ],
+    [
+      "万",
+      "wàn",
+      "diez mil"
+    ],
+    [
+      "忘记",
+      "wàngjì",
+      "olvidar"
+    ],
+    [
+      "为",
+      "wèi",
+      "por / para"
+    ],
+    [
+      "为了",
+      "wèile",
+      "con el fin de"
+    ],
+    [
+      "位",
+      "wèi",
+      "(clasif. de personas)"
+    ],
+    [
+      "文化",
+      "wénhuà",
+      "cultura"
+    ],
+    [
+      "习惯",
+      "xíguàn",
+      "hábito / acostumbrarse"
+    ],
+    [
+      "洗手间",
+      "xǐshǒujiān",
+      "baño"
+    ],
+    [
+      "洗澡",
+      "xǐzǎo",
+      "ducharse"
+    ],
+    [
+      "夏",
+      "xià",
+      "verano"
+    ],
+    [
+      "先",
+      "xiān",
+      "primero"
+    ],
+    [
+      "香蕉",
+      "xiāngjiāo",
+      "plátano"
+    ],
+    [
+      "相信",
+      "xiāngxìn",
+      "creer"
+    ],
+    [
+      "向",
+      "xiàng",
+      "hacia"
+    ],
+    [
+      "像",
+      "xiàng",
+      "parecerse / como"
+    ],
+    [
+      "小心",
+      "xiǎoxīn",
+      "tener cuidado"
+    ],
+    [
+      "校长",
+      "xiàozhǎng",
+      "director (de escuela)"
+    ],
+    [
+      "新闻",
+      "xīnwén",
+      "noticias"
+    ],
+    [
+      "新鲜",
+      "xīnxiān",
+      "fresco"
+    ],
+    [
+      "信用卡",
+      "xìnyòngkǎ",
+      "tarjeta de crédito"
+    ],
+    [
+      "行李箱",
+      "xínglixiāng",
+      "maleta"
+    ],
+    [
+      "熊猫",
+      "xióngmāo",
+      "panda"
+    ],
+    [
+      "需要",
+      "xūyào",
+      "necesitar"
+    ],
+    [
+      "选择",
+      "xuǎnzé",
+      "elegir"
+    ],
+    [
+      "要求",
+      "yāoqiú",
+      "requisito / exigir"
+    ],
+    [
+      "爷爷",
+      "yéye",
+      "abuelo"
+    ],
+    [
+      "一定",
+      "yídìng",
+      "definitivamente"
+    ],
+    [
+      "一共",
+      "yígòng",
+      "en total"
+    ],
+    [
+      "一会儿",
+      "yíhuìr",
+      "un rato"
+    ],
+    [
+      "一样",
+      "yíyàng",
+      "igual"
+    ],
+    [
+      "以前",
+      "yǐqián",
+      "antes"
+    ],
+    [
+      "一般",
+      "yìbān",
+      "generalmente"
+    ],
+    [
+      "一边",
+      "yìbiān",
+      "mientras / a un lado"
+    ],
+    [
+      "一直",
+      "yìzhí",
+      "siempre / directamente"
+    ],
+    [
+      "音乐",
+      "yīnyuè",
+      "música"
+    ],
+    [
+      "银行",
+      "yínháng",
+      "banco"
+    ],
+    [
+      "饮料",
+      "yǐnliào",
+      "bebida"
+    ],
+    [
+      "应该",
+      "yīnggāi",
+      "deber (de)"
+    ],
+    [
+      "影响",
+      "yǐngxiǎng",
+      "influencia / influir"
+    ],
+    [
+      "用",
+      "yòng",
+      "usar"
+    ],
+    [
+      "游戏",
+      "yóuxì",
+      "juego"
+    ],
+    [
+      "有名",
+      "yǒumíng",
+      "famoso"
+    ],
+    [
+      "又",
+      "yòu",
+      "de nuevo"
+    ],
+    [
+      "遇到",
+      "yùdào",
+      "encontrarse con"
+    ],
+    [
+      "愿意",
+      "yuànyì",
+      "estar dispuesto"
+    ],
+    [
+      "月亮",
+      "yuèliang",
+      "luna"
+    ],
+    [
+      "越",
+      "yuè",
+      "cuanto más"
+    ],
+    [
+      "站",
+      "zhàn",
+      "estación / parada"
+    ],
+    [
+      "长高",
+      "zhǎnggāo",
+      "crecer (en altura)"
+    ],
+    [
+      "着急",
+      "zháojí",
+      "estar ansioso"
+    ],
+    [
+      "照顾",
+      "zhàogù",
+      "cuidar"
+    ],
+    [
+      "照片",
+      "zhàopiàn",
+      "foto"
+    ],
+    [
+      "照相机",
+      "zhàoxiàngjī",
+      "cámara"
+    ],
+    [
+      "只是",
+      "zhǐshì",
+      "solo / solamente"
+    ],
+    [
+      "中间",
+      "zhōngjiān",
+      "en medio"
+    ],
+    [
+      "终于",
+      "zhōngyú",
+      "finalmente"
+    ],
+    [
+      "种类",
+      "zhǒnglèi",
+      "tipo / especie"
+    ],
+    [
+      "重要",
+      "zhòngyào",
+      "importante"
+    ],
+    [
+      "周末",
+      "zhōumò",
+      "fin de semana"
+    ],
+    [
+      "主要",
+      "zhǔyào",
+      "principal"
+    ],
+    [
+      "注意",
+      "zhùyì",
+      "poner atención"
+    ],
+    [
+      "自己",
+      "zìjǐ",
+      "uno mismo"
+    ],
+    [
+      "总是",
+      "zǒngshì",
+      "siempre"
+    ],
+    [
+      "嘴",
+      "zuǐ",
+      "boca"
+    ],
+    [
+      "最后",
+      "zuìhòu",
+      "al final"
+    ],
+    [
+      "最近",
+      "zuìjìn",
+      "recientemente"
+    ],
+    [
+      "作业",
+      "zuòyè",
+      "tarea"
+    ],
+    [
+      "老师",
+      "lǎoshī",
+      "profesor"
+    ],
+    [
+      "电影",
+      "diànyǐng",
+      "película"
+    ],
+    [
+      "计算机",
+      "jìsuànjī",
+      "computadora"
+    ],
+    [
+      "食堂",
+      "shítáng",
+      "comedero / comedor"
+    ],
+    [
+      "运动员",
+      "yùndòngyuán",
+      "deportista"
+    ],
+    [
+      "旅行",
+      "lǚxíng",
+      "viaje"
+    ],
+    [
+      "住宿",
+      "zhùsú",
+      "alojamiento"
+    ],
+    [
+      "电脑",
+      "diànnǎo",
+      "computadora"
+    ]
   ]
 }
