@@ -134,6 +134,12 @@ Proyecto completado y funcional. Requiere servidor local o GitHub Pages para ope
 - **Solución:** Agregar `import { speak } from './tts.js'` al inicio de `js/tonos.js:1`
 - **Archivo modificado:** `js/tonos.js:1`
 
+**Bug 8: TypeError en grabadora.js - `groups[w.level] is undefined`**
+- **Sintoma:** `TypeError: cannot access property "appendChild", groups[w.level] is undefined` en `grabadora.js:21`
+- **Diagnóstico:** El objeto `groups` solo tenía claves para niveles 1, 2, 3 y 'sib', pero el `vocab` (desde `kb.vocab`) incluye caracteres de HSK 1-5. Los caracteres de hsk4 y hsk5 tienen `level: 4` o `level: 5`, causando que `groups[4]` o `groups[5]` sea `undefined` al intentar hacer appendChild
+- **Solución:** Agregar niveles 4 y 5 al objeto `groups` en `js/grabadora.js:6-12`, y actualizar las etiquetas y el bucle de iteración en líneas 17-18 y 23
+- **Archivo modificado:** `js/grabadora.js:6-23`
+
 ### 30 de agosto de 2026 - Plan de acción
 
 **Prioridad Alta:**
@@ -200,6 +206,7 @@ Proyecto completado y funcional. Requiere servidor local o GitHub Pages para ope
 - `entrenador-mandarin (4).html` - Mantenedo como backup/referencia
 - `js/data.js` - Arreglo estructura JSON y TypeError `pin is undefined`
 - `js/tonos.js` - Import `speak` from `tts.js` - ReferenceError fix
+- `js/grabadora.js` - Agregado niveles 4 y 5 al objeto `groups` para hsk4/hsk5 soporte
 
 ### Requerimientos para ejecución
 
