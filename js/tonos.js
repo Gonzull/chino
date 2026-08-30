@@ -1,3 +1,5 @@
+import { speak } from './tts.js';
+
 const TONE_PATHS = {
   1: 'M4,7 L36,7',
   2: 'M4,17 Q14,17 36,4',
