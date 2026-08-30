@@ -20,6 +20,8 @@ const APP_SHELL = [
   './data/hsk1.json',
   './data/hsk2.json',
   './data/hsk3.json',
+  './data/hsk4.json',
+  './data/hsk5.json',
   './data/diagnostico.json',
   './data/sibilantes.json',
   './data/aspiracion.json',
