@@ -7,11 +7,15 @@ function initGrabadora(vocab, sibGroups) {
     1: document.createElement('optgroup'),
     2: document.createElement('optgroup'),
     3: document.createElement('optgroup'),
+    4: document.createElement('optgroup'),
+    5: document.createElement('optgroup'),
     sib: document.createElement('optgroup')
   };
   groups[1].label = 'HSK 1';
   groups[2].label = 'HSK 2';
   groups[3].label = 'HSK 3';
+  groups[4].label = 'HSK 4';
+  groups[5].label = 'HSK 5';
   groups.sib.label = 'Sibilantes (práctica extra)';
 
   words.forEach((w, i) => {
@@ -20,7 +24,7 @@ function initGrabadora(vocab, sibGroups) {
     opt.textContent = `${w.han} (${w.pin}) — ${w.es}`;
     groups[w.level].appendChild(opt);
   });
-  [1, 2, 3, 'sib'].forEach(lv => select.appendChild(groups[lv]));
+  [1, 2, 3, 4, 5, 'sib'].forEach(lv => select.appendChild(groups[lv]));
 
   function updateHan() {
     document.getElementById('recHan').textContent = words[select.value].han;
