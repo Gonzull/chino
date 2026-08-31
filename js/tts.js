@@ -25,7 +25,7 @@ function speak(text, opts={}){
   if (zhVoice) u.voice = zhVoice;
   // Modo aprendizaje: voz muy lenta y grave para estudiar
   if (opts.learning) {
-    u.rate = 0.5;
+    u.rate = 0.55;
     u.pitch = 0.8;
   }
   // Voz más calmada: reducir velocidad y añadir una pausa breve
