@@ -293,14 +293,14 @@ Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras correcció
 
 **Con Python (recomendado para este Windows 10):**
 ```powershell
-cd F:\Proyectos\Entrenador Chino
+cd entrenador-mandarin
 python -m http.server 8080
 ```
 Luego: `http://localhost:8080`
 
 **Con npx http-server (requiere Node.js):**
 ```powershell
-cd F:\Proyectos\Entrenador Chino
+cd entrenador-mandarin
 npm install http-server
 npx http-server
 ```
@@ -315,7 +315,7 @@ O simplemente: `npx http-server` estando en la carpeta.
 
 1. **Verificado animación loop/detener:** Commit ed4fa64 probado local y GitHub Pages - loop 800ms OK
 2. **Verificado corrección:** PC nativo OK, Android fallback IA 40MB detecta (precisión según pronunciación) - commits e337000/fb9859c/53bbcae/1525d06
-3. **Probar GitHub Pages:** Verificar `https://Gonzull.github.io/entrenador-mandarin/` carga voz TTS learning y vocabulario 4.269
+3. **Probar GitHub Pages:** Verificar `https://TU_USUARIO.github.io/entrenador-mandarin/` carga voz TTS learning y vocabulario 4.269
 4. **Opcional:** Completar 481 palabras restantes HSK 1-5 (90%→100%)
 5. **Instalar PWA en Android** - Confirmar offline tras expansión 4.269 palabras
 
