@@ -1,9 +1,9 @@
 # Bitácora del Proyecto Entrenador de Mandarín
 
-## Versión actual: 1.0.2 (31 de agosto de 2026 - noche)
+## Versión actual: 1.0.4 (31 de agosto de 2026 - noche, grabadora ajustes finales)
 
 ### Estado general
-Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras corrección, 90% estándar). Requiere servidor local o GitHub Pages. Funciona offline tras primera carga vía Service Worker. Voz TTS mejorada (learning 0.5, calm 0.60, default 0.70). Corrección con fallback móvil IA Whisper WASM (40MB) para Android/iOS; nativo Chrome/Edge en PC. Animación escritura loop/detener resuelta.
+Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Requiere servidor local o GitHub Pages, offline vía Service Worker v2. Voz TTS learning 0.5/calm 0.60/default 0.70. Corrección y grabadora con diagramas lengua SVG sibilantes (10) responsive + leyenda lateral. Grabadora con filtro HSK 1-5/Todos para 4.269 palabras. Animación escritura loop 800ms resuelta. Ajustes finales de layout sin solapamiento hanzi.
 
 ### Qué se hizo (Cronología resumida)
 
@@ -85,6 +85,21 @@ Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras correcció
 - `index.html:133` nuevo aviso `#corrAI` "Modo Corrección - IA (móvil): ~40MB"
 - `js/correccion.js:58-120` rama `if(isMobile)` con `MediaRecorder 3.5s` → `Xenova/whisper-tiny` vía `transformers.js` CDN, `evaluate([text])` reutilizado; PC mantiene `SpeechRecognition` nativo
 - Modelo no requiere subir a GitHub, se descarga del CDN al primer uso y queda cacheado; self-host posible pero no recomendado (80MB, bloat repo)
+
+**31 de agosto de 2026 - Diagramas lengua SVG sibilantes (commits 8e3b63f, fe6b1c3, 516456f, 4a3dcc7)**
+- Nuevo `js/tongueDiagrams.js` con 10 SVGs 120/120 (paladar dorado #CBA35C, dientes blanco #F1E9DC, lengua roja #B4432E, aire ///) para `zh/ch/sh/z/c/s/j/q/x/r` con etiqueta
+- `js/correccion.js:1,18-32` integra `tongueDiagramSVG(current.sound)` en `#tongueDiagram` junto a `#corrSoundTag`; `sw.js` v1→v2 incluye `tongueDiagrams.js` en `APP_SHELL`
+- Mejora responsive `fe6b1c3`: 160x160 PC / 120x120 móvil + leyenda `Paladar/Dientes/Lengua/Aire` al lado derecho (flex, antes sobresalía del recuadro)
+- Fix limitación `516456f`: solo sibilantes tienen diagrama preciso; resto muestra placeholder "Sin diagrama — solo sibilantes" (grabadora con 4.269 palabras)
+- Fix overlap `4a3dcc7`: wrapper `margin 10→22px` para no tapar hanzi en corrección y grabadora
+
+**31 de agosto de 2026 - Grabadora con filtro HSK y diagrama (commit 3616978)**
+- `index.html:112-128` añadido `levelfilter #recLevelFilter` con botones Todos/HSK1-5/Sibilantes (igual que escritura) + `div#recTongueDiagram` + leyenda flex
+- `js/grabadora.js` reescrito: `import tongueDiagrams`, `levelFilter` + `filteredWords`, `getSound(pin)` para 4.269 HSK, `renderSelect()` repuebla `<select>` filtrado manteniendo `optgroup`, `updateDiagram()` responsive 160/120. Valija para todas las palabras HSK
+
+**31 de agosto de 2026 - Ajustes finales grabadora diagrama (commits 752c6f7, 43ca807)**
+- `752c6f7`: wrapper grabadora `margin 22→36px` solo para `recTongue` (corrección queda en 22px) para no tapar hanzi
+- `43ca807`: `recTongueDiagram` 160x120 → 120x120 contenedor, SVG 160/120 → 120 PC / 90 móvil solo grabadora (corrección mantiene 160/120), validado sin solapamiento
 
 **30 de agosto de 2026 - Interfaz y CSS profesional**
 - `styles.css` con chips SRS, banner `load-error`, estadísticas en grid 2x2
@@ -221,6 +236,7 @@ Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras correcció
 - ✅ **Animación escritura loop/detener** - RESUELTO ed4fa64 - clic1 loop, clic2 detener con carácter final visible, clic3 reinicia
 
 **Mediana priority:**
+- ✅ **Filtro HSK grabadora + diagrama lengua** - RESUELTO 3616978/516456f/4a3dcc7 - filtro Todos/HSK1-5/Sib para 4.269 palabras + SVG responsive + leyenda lateral + placeholder no-sibilantes
 - Agregar más pares de aspiración zh/q/x/sh/ch (5 pares actuales)
 - Modo "examen" en escritura (ocultar modelo)
 - Añadir palabras HSK desde interfaz (hoy solo vía JSON)
@@ -228,9 +244,9 @@ Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras correcció
 
 **Baja priority:**
 - Contenido cultural/notas fonéticas adicionales
-- Animaciones interfaz adicionales (tras fix loop)
 - Soporte más dialectos TTS (tras mejora learning)
 - Completar HSK 1-5 al 100% estándar (faltan 481 palabras, 90% actual)
+- Diagramas lengua para no-sibilantes (b/p/m/l etc.) si se requiere
 
 ### Archivos modificados/createados
 
@@ -257,11 +273,13 @@ Proyecto completado y funcional (4.269 palabras HSK 1-5 + 89 palabras correcció
 - `entrenador-mandarin (4).html` - Mantenedo como backup/referencia
 - `js/data.js` - Arreglo estructura JSON y TypeError `pin is undefined`
 - `js/tonos.js` - Import `speak` from `tts.js` - ReferenceError fix
-- `js/grabadora.js` - Agregado niveles 4 y 5 al objeto `groups` para hsk4/hsk5 soporte
+- `js/grabadora.js` - Niveles 4/5 + filtro HSK 1-5/Todos + diagrama lengua sibilantes (120 PC/90 móvil, margin 36px, placeholder no-sibilantes)
 - `js/tts.js` - Mejora voz: learning 0.5/0.8, calm 0.75→0.60, default 0.70/0.95
-- `js/correccion.js` - TTS calm en `corrListen` + expansión 19→89 + fallback móvil Whisper WASM 40MB (isMobile)
+- `js/correccion.js` - TTS calm + expansión 19→89 + fallback móvil IA 40MB + diagrama 160/120 + leyenda lateral flex
+- `js/tongueDiagrams.js` - Nuevo: 10 SVGs sibilantes (zh/ch/sh/z/c/s/j/q/x/r) + placeholder "Sin diagrama"
 - `js/escritura.js` - Loop animación isLooping/onComplete 800ms (31 líneas)
-- `index.html:132-133` - Panel-desc añade `q` + aviso `#corrAI` móvil IA 40MB
+- `sw.js` - v1→v2 + APP_SHELL incluye tongueDiagrams.js
+- `index.html:112-133` - Filtro grabadora + diagramas responsive + leyenda lateral + panel-desc q + aviso IA 40MB
 - `data/hsk1.json` - Expandido desde 153 a 395 palabras
 - `data/hsk2.json` - Expandido desde 148 a 261 palabras
 - `data/hsk3.json` - Expandido desde 285 a 568 palabras
@@ -313,15 +331,15 @@ O simplemente: `npx http-server` estando en la carpeta.
 
 ### Próximos pasos inmediatos (01 de septiembre 2026):
 
-1. **Verificado animación loop/detener:** Commit ed4fa64 probado local y GitHub Pages - loop 800ms OK
-2. **Verificado corrección:** PC nativo OK, Android fallback IA 40MB detecta (precisión según pronunciación) - commits e337000/fb9859c/53bbcae/1525d06
-3. **Probar GitHub Pages:** Verificar `https://TU_USUARIO.github.io/entrenador-mandarin/` carga voz TTS learning y vocabulario 4.269
-4. **Opcional:** Completar 481 palabras restantes HSK 1-5 (90%→100%)
-5. **Instalar PWA en Android** - Confirmar offline tras expansión 4.269 palabras
+1. **Verificado animación loop/detener:** ed4fa64 OK 800ms
+2. **Verificado corrección:** PC nativo OK, Android IA 40MB OK (precisión según pronunciación) - commits e337000/fb9859c/53bbcae/1525d06
+3. **Verificado diagramas lengua + grabadora filtro:** 8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807 OK - SVG sibilantes + placeholder + leyenda lateral + filtro HSK 4.269 + fix overlap 36px + tamaño 120/90 grabadora
+4. **Probar GitHub Pages:** `https://TU_USUARIO.github.io/entrenador-mandarin/` carga TTS learning, vocabulario 4.269 y diagramas sin solapamiento
+5. **Opcional:** Completar 481 palabras HSK 1-5 (90%→100%) + PWA offline
 
 ### Contacto / Soporte
 Para dudas sobre la ejecución o extensiones del proyecto, revisar este bitácora.md o modificar los archivos JS según necesidad. El proyecto está diseñado para ser mantenido y ampliado por desarrolladores con conocimientos básicos de JavaScript.
 
 ---
 
-*Bitácora generada y actualizada el 31 de agosto de 2026 noche. Proyecto en 1.0.2 con 4.269 palabras HSK 1-5 (90% estándar) + 89 corrección (19→89), voz TTS learning 0.5/calm 0.60/default 0.70 y fallback móvil IA 40MB. Fixes Bugs 6-10 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06. Requiere servidor local o GitHub Pages; funciona offline tras primera carga vía Service Worker.*
+*Bitácora generada y actualizada el 31 de agosto de 2026 noche (1.0.4). Proyecto con 4.269 HSK (90%) + 89 corrección, TTS learning 0.5/calm 0.60/default 0.70, fallback IA 40MB móvil, diagramas lengua SVG sibilantes + grabadora filtro HSK + ajustes finales sin solapamiento. Fixes Bugs 6-9 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06/8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807. Requiere servidor local o GitHub Pages; offline vía Service Worker v2.*
