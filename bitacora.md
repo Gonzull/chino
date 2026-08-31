@@ -1,9 +1,9 @@
 # Bitácora del Proyecto Entrenador de Mandarín
 
-## Versión actual: 1.0.4 (31 de agosto de 2026 - noche, grabadora ajustes finales)
+## Versión actual: 1.0.5 (31 de agosto de 2026 - noche, tonos learning)
 
 ### Estado general
-Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Requiere servidor local o GitHub Pages, offline vía Service Worker v2. Voz TTS learning 0.5/calm 0.60/default 0.70. Corrección y grabadora con diagramas lengua SVG sibilantes (10) responsive + leyenda lateral. Grabadora con filtro HSK 1-5/Todos para 4.269 palabras. Animación escritura loop 800ms resuelta. Ajustes finales de layout sin solapamiento hanzi.
+Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Requiere servidor local o GitHub Pages, offline vía Service Worker v2. Voz TTS learning 0.5/calm 0.60/default 0.70 (tonos ahora en learning, corrección en calm). Corrección y grabadora con diagramas lengua SVG sibilantes (10) responsive + leyenda lateral. Grabadora y tonos con filtro HSK 1-5/Todos (tonos solo singulares 972/3909). Animación escritura loop 800ms resuelta. Layout sin solapamiento.
 
 ### Qué se hizo (Cronología resumida)
 
@@ -100,6 +100,10 @@ Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Req
 **31 de agosto de 2026 - Ajustes finales grabadora diagrama (commits 752c6f7, 43ca807)**
 - `752c6f7`: wrapper grabadora `margin 22→36px` solo para `recTongue` (corrección queda en 22px) para no tapar hanzi
 - `43ca807`: `recTongueDiagram` 160x120 → 120x120 contenedor, SVG 160/120 → 120 PC / 90 móvil solo grabadora (corrección mantiene 160/120), validado sin solapamiento
+
+**31 de agosto de 2026 - Tonos en learning y validación singulares (commit 6ddcc36)**
+- `js/tonos.js:61,95` `speak(current.han)` → `speak(current.han,{learning:true})` (0.5 rate) para tonos ultra lento
+- Validación: `tonos.js:36-42` filtra `w.han.length===1 && w.tone!==5` → 972 singulares de 3.909 totales (HSK1:190, HSK2:93, HSK3:161, HSK4:230, HSK5:298) → 946 con tono 1-4; filtro HSK por `w.level` OK, solo singulares intencional (compuestas confundirían quiz de tono único)
 
 **30 de agosto de 2026 - Interfaz y CSS profesional**
 - `styles.css` con chips SRS, banner `load-error`, estadísticas en grid 2x2
@@ -272,7 +276,7 @@ Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Req
 **Modificado de lo original:**
 - `entrenador-mandarin (4).html` - Mantenedo como backup/referencia
 - `js/data.js` - Arreglo estructura JSON y TypeError `pin is undefined`
-- `js/tonos.js` - Import `speak` from `tts.js` - ReferenceError fix
+- `js/tonos.js` - Import `speak` + TTS `learning:true` (0.5) para tonos ultra lento (solo singulares 972/3909)
 - `js/grabadora.js` - Niveles 4/5 + filtro HSK 1-5/Todos + diagrama lengua sibilantes (120 PC/90 móvil, margin 36px, placeholder no-sibilantes)
 - `js/tts.js` - Mejora voz: learning 0.5/0.8, calm 0.75→0.60, default 0.70/0.95
 - `js/correccion.js` - TTS calm + expansión 19→89 + fallback móvil IA 40MB + diagrama 160/120 + leyenda lateral flex
@@ -334,12 +338,13 @@ O simplemente: `npx http-server` estando en la carpeta.
 1. **Verificado animación loop/detener:** ed4fa64 OK 800ms
 2. **Verificado corrección:** PC nativo OK, Android IA 40MB OK (precisión según pronunciación) - commits e337000/fb9859c/53bbcae/1525d06
 3. **Verificado diagramas lengua + grabadora filtro:** 8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807 OK - SVG sibilantes + placeholder + leyenda lateral + filtro HSK 4.269 + fix overlap 36px + tamaño 120/90 grabadora
-4. **Probar GitHub Pages:** `https://TU_USUARIO.github.io/entrenador-mandarin/` carga TTS learning, vocabulario 4.269 y diagramas sin solapamiento
-5. **Opcional:** Completar 481 palabras HSK 1-5 (90%→100%) + PWA offline
+4. **Verificado tonos learning:** 6ddcc36 OK - TTS learning 0.5 para tonos, solo singulares 972/3909 intencional (w.han.length===1)
+5. **Probar GitHub Pages:** `https://TU_USUARIO.github.io/entrenador-mandarin/` carga TTS learning, vocabulario 4.269 y diagramas sin solapamiento
+6. **Opcional:** Completar 481 palabras HSK 1-5 (90%→100%) + PWA offline
 
 ### Contacto / Soporte
 Para dudas sobre la ejecución o extensiones del proyecto, revisar este bitácora.md o modificar los archivos JS según necesidad. El proyecto está diseñado para ser mantenido y ampliado por desarrolladores con conocimientos básicos de JavaScript.
 
 ---
 
-*Bitácora generada y actualizada el 31 de agosto de 2026 noche (1.0.4). Proyecto con 4.269 HSK (90%) + 89 corrección, TTS learning 0.5/calm 0.60/default 0.70, fallback IA 40MB móvil, diagramas lengua SVG sibilantes + grabadora filtro HSK + ajustes finales sin solapamiento. Fixes Bugs 6-9 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06/8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807. Requiere servidor local o GitHub Pages; offline vía Service Worker v2.*
+*Bitácora generada y actualizada el 31 de agosto de 2026 noche (1.0.5). Proyecto con 4.269 HSK (90%) + 89 corrección (solo singulares 972/3909 en tonos intencional), TTS learning 0.5/calm 0.60/default 0.70 (tonos en learning), fallback IA 40MB móvil, diagramas lengua SVG + grabadora filtro HSK. Fixes Bugs 6-9 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06/8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807/6ddcc36. Requiere servidor local o GitHub Pages; offline vía Service Worker v2.*
