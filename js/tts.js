@@ -23,9 +23,26 @@ function speak(text, opts={}){
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'zh-CN';
   if (zhVoice) u.voice = zhVoice;
+  // Modo aprendizaje: voz muy lenta y grave para estudiar
+  if (opts.learning) {
+    u.rate = 0.5;
+    u.pitch = 0.8;
+  }
   // Voz más calmada: reducir velocidad y añadir una pausa breve
-  u.rate = opts.calm ? 0.75 : (opts.fast ? 1.1 : 0.82);
-  u.pitch = opts.calm ? 0.9 : 1.0;
+  else if (opts.calm) {
+    u.rate = 0.75;
+    u.pitch = 0.9;
+  }
+  // Velocidad rápida
+  else if (opts.fast) {
+    u.rate = 1.1;
+    u.pitch = 1.2;
+  }
+  // Velocidad normal mejorada: más lenta y natural
+  else {
+    u.rate = 0.70;
+    u.pitch = 0.95;
+  }
   u.volume = 1.0;
   speechSynthesis.speak(u);
 }
