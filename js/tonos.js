@@ -58,7 +58,7 @@ function initTonos(vocab) {
       b.addEventListener('click', () => answer(t, b));
       wrap.appendChild(b);
     });
-    speak(current.han);
+    speak(current.han, { learning: true });
   }
 
   function answer(t, btn) {
@@ -92,7 +92,7 @@ function initTonos(vocab) {
     newRound();
   });
 
-  el('tonePlay').addEventListener('click', () => speak(current.han));
+  el('tonePlay').addEventListener('click', () => speak(current.han, { learning: true }));
   newRound();
 }
 
