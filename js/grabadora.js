@@ -28,7 +28,7 @@ function initGrabadora(vocab, sibGroups) {
     const dia = document.getElementById('recTongueDiagram');
     if (dia && w) {
       const isMobile = window.matchMedia('(max-width: 600px)').matches;
-      dia.innerHTML = tongueDiagramSVG(getSound(w.pin), isMobile ? 120 : 160, isMobile ? 120 : 160);
+      dia.innerHTML = tongueDiagramSVG(getSound(w.pin), isMobile ? 90 : 120, isMobile ? 90 : 120);
     }
   }
 
