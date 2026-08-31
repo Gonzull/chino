@@ -98,11 +98,16 @@ function initCorreccion(words) {
     recognition = createRecognition();
 
     el('corrMicBtn').addEventListener('click', () => {
+      el('corrMicBtn').disabled = true;
       try { recognition.abort(); } catch {}
       clearTimeout(listenTimeout);
       el('corrMicBtn').style.background = 'var(--jade)';
-      recognition = createRecognition();
-      try { recognition.start(); } catch (e) { el('corrStatus').textContent = 'No se pudo iniciar: ' + e.message; }
+      el('corrStatus').textContent = 'Reiniciando micrófono…';
+      setTimeout(() => {
+        recognition = createRecognition();
+        try { recognition.start(); } catch (e) { el('corrStatus').textContent = 'No se pudo iniciar (' + e.message + '). Toca de nuevo.'; }
+        el('corrMicBtn').disabled = false;
+      }, 350);
     });
   } else {
     el('corrUnsupported').style.display = 'flex';
