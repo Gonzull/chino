@@ -1,37 +1,94 @@
 import { speak } from './tts.js';
+import { tongueDiagramSVG } from './tongueDiagrams.js';
 
 function initGrabadora(vocab, sibGroups) {
   const words = [...vocab, ...sibGroups.flat().map(w => ({ ...w, level: 'sib' }))];
   const select = document.getElementById('recWordSelect');
-  const groups = {
-    1: document.createElement('optgroup'),
-    2: document.createElement('optgroup'),
-    3: document.createElement('optgroup'),
-    4: document.createElement('optgroup'),
-    5: document.createElement('optgroup'),
-    sib: document.createElement('optgroup')
-  };
-  groups[1].label = 'HSK 1';
-  groups[2].label = 'HSK 2';
-  groups[3].label = 'HSK 3';
-  groups[4].label = 'HSK 4';
-  groups[5].label = 'HSK 5';
-  groups.sib.label = 'Sibilantes (práctica extra)';
+  let levelFilter = 'all';
+  let filteredWords = words;
 
-  words.forEach((w, i) => {
-    const opt = document.createElement('option');
-    opt.value = i;
-    opt.textContent = `${w.han} (${w.pin}) — ${w.es}`;
-    groups[w.level].appendChild(opt);
-  });
-  [1, 2, 3, 4, 5, 'sib'].forEach(lv => select.appendChild(groups[lv]));
+  function getSound(pin) {
+    if (!pin) return 'sh';
+    let p = pin.toLowerCase().trim().split(' ')[0].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    if (p.startsWith('zh')) return 'zh';
+    if (p.startsWith('ch')) return 'ch';
+    if (p.startsWith('sh')) return 'sh';
+    if (p.startsWith('r')) return 'r';
+    if (p.startsWith('z')) return 'z';
+    if (p.startsWith('c')) return 'c';
+    if (p.startsWith('s')) return 's';
+    if (p.startsWith('j')) return 'j';
+    if (p.startsWith('q')) return 'q';
+    if (p.startsWith('x')) return 'x';
+    return 'sh';
+  }
+
+  function updateDiagram() {
+    const w = filteredWords[select.value];
+    const dia = document.getElementById('recTongueDiagram');
+    if (dia && w) {
+      const isMobile = window.matchMedia('(max-width: 600px)').matches;
+      dia.innerHTML = tongueDiagramSVG(getSound(w.pin), isMobile ? 120 : 160, isMobile ? 120 : 160);
+    }
+  }
+
+  function renderSelect() {
+    filteredWords = levelFilter === 'all' ? words : words.filter(w => String(w.level) === String(levelFilter));
+    select.innerHTML = '';
+    const groups = {
+      1: document.createElement('optgroup'),
+      2: document.createElement('optgroup'),
+      3: document.createElement('optgroup'),
+      4: document.createElement('optgroup'),
+      5: document.createElement('optgroup'),
+      sib: document.createElement('optgroup')
+    };
+    groups[1].label = 'HSK 1';
+    groups[2].label = 'HSK 2';
+    groups[3].label = 'HSK 3';
+    groups[4].label = 'HSK 4';
+    groups[5].label = 'HSK 5';
+    groups.sib.label = 'Sibilantes (práctica extra)';
+    filteredWords.forEach((w, i) => {
+      const opt = document.createElement('option');
+      opt.value = i;
+      opt.textContent = `${w.han} (${w.pin}) — ${w.es}`;
+      const grp = groups[w.level] || groups[1];
+      grp.appendChild(opt);
+    });
+    // solo añadir grupos con opciones
+    [1, 2, 3, 4, 5, 'sib'].forEach(lv => { if (groups[lv].children.length) select.appendChild(groups[lv]); });
+    if (filteredWords.length) {
+      select.value = 0;
+      updateHan();
+    }
+  }
 
   function updateHan() {
-    document.getElementById('recHan').textContent = words[select.value].han;
+    const w = filteredWords[select.value];
+    if (w) {
+      document.getElementById('recHan').textContent = w.han;
+      updateDiagram();
+    }
   }
   select.addEventListener('change', updateHan);
-  updateHan();
-  document.getElementById('recPlayNative').addEventListener('click', () => speak(words[select.value].han));
+  document.getElementById('recLevelFilter').addEventListener('click', e => {
+    const b = e.target.closest('.lvlbtn');
+    if (!b) return;
+    document.querySelectorAll('#recLevelFilter .lvlbtn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    levelFilter = b.dataset.level;
+    renderSelect();
+  });
+  // responsive diagram al cambiar tamaño
+  window.matchMedia('(max-width: 600px)').addEventListener
+    ? window.matchMedia('(max-width: 600px)').addEventListener('change', updateDiagram)
+    : window.matchMedia('(max-width: 600px)').addListener(updateDiagram);
+  renderSelect();
+  document.getElementById('recPlayNative').addEventListener('click', () => {
+    const w = filteredWords[select.value];
+    if (w) speak(w.han);
+  });
 
   let mediaRecorder,
     chunks = [],
