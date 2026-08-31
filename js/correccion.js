@@ -18,23 +18,23 @@ function initCorreccion(words) {
     el('corrHan').textContent = current.han;
     el('corrPinEs').textContent = `${current.pin} — ${current.es}`;
     el('corrSoundTag').textContent = current.sound;
-    // diagrama lengua responsive + leyenda
+    // diagrama lengua responsive + leyenda al lado derecho
     let dia = el('tongueDiagram');
     if (!dia) {
+      const wrapper = document.createElement('div');
+      wrapper.id = 'tongueWrapper';
+      wrapper.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:10px auto;max-width:420px;';
       dia = document.createElement('div');
       dia.id = 'tongueDiagram';
-      dia.style.cssText = 'width:160px;height:160px;max-width:90vw;margin:10px auto;';
+      dia.style.cssText = 'width:160px;height:160px;flex-shrink:0;';
+      const legend = document.createElement('div');
+      legend.id = 'tongueLegend';
+      legend.style.cssText = 'font-size:10px;color:var(--text-dim);text-align:left;line-height:1.4;max-width:160px;';
+      legend.innerHTML = '<span style="color:#CBA35C">━</span> Paladar<br><span style="display:inline-block;width:10px;height:8px;background:#F1E9DC;border:1px solid #5C8C77;vertical-align:middle"></span> Dientes<br><span style="display:inline-block;width:10px;height:8px;background:#B4432E;vertical-align:middle"></span> Lengua<br><span style="color:#CBA35C">///</span> Aire';
+      wrapper.appendChild(dia);
+      wrapper.appendChild(legend);
       const card = document.getElementById('corrCard');
-      if (card) card.insertBefore(dia, card.querySelector('.quiz-stage') || card.firstChild);
-      // leyenda una sola vez
-      let legend = document.getElementById('tongueLegend');
-      if (!legend) {
-        legend = document.createElement('div');
-        legend.id = 'tongueLegend';
-        legend.style.cssText = 'font-size:10px;color:var(--text-dim);text-align:center;line-height:1.3;margin:-2px auto 8px;max-width:260px;';
-        legend.innerHTML = '<span style="color:#CBA35C">━</span> Paladar &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#F1E9DC;border:1px solid #5C8C77;vertical-align:middle"></span> Dientes &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#B4432E;vertical-align:middle"></span> Lengua &nbsp; <span style="color:#CBA35C">///</span> Aire';
-        dia.after(legend);
-      }
+      if (card) card.insertBefore(wrapper, card.querySelector('.quiz-stage') || card.firstChild);
       // responsive: 160 en PC, 120 en móvil
       const mql = window.matchMedia('(max-width: 600px)');
       const applySize = () => { dia.style.width = mql.matches ? '120px' : '160px'; dia.style.height = mql.matches ? '120px' : '160px'; };

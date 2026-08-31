@@ -29,8 +29,11 @@ const LABELS = {
 };
 
 export function tongueDiagramSVG(sound, w=120, h=120) {
-  const tongue = TONGUES[sound] || TONGUES.sh;
-  const label = LABELS[sound] || sound;
+  if (!TONGUES[sound]) {
+    return `<svg width="${w}" height="${h}" viewBox="0 0 120 120" style="background:var(--bg-soft);border:1px solid var(--gold);border-radius:8px"><text x="60" y="55" text-anchor="middle" font-size="8" fill="var(--text-dim)">Sin diagrama</text><text x="60" y="68" text-anchor="middle" font-size="7" fill="var(--text-dim)">solo sibilantes</text><text x="60" y="80" text-anchor="middle" font-size="6" fill="var(--text-dim)">zh/ch/sh/z/c/s/j/q/x/r</text></svg>`;
+  }
+  const tongue = TONGUES[sound];
+  const label = LABELS[sound];
   return `
 <svg width="${w}" height="${h}" viewBox="0 0 120 120" style="background:var(--bg-soft);border:1px solid var(--gold);border-radius:8px">
   <path d="${PALATE}" fill="none" stroke="#CBA35C" stroke-width="3" stroke-linecap="round"/>

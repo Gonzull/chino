@@ -123,8 +123,10 @@
     </div>
     <div class="card">
       <select class="rec-select" id="recWordSelect"></select>
-      <div id="recTongueDiagram" style="width:160px;height:120px;max-width:90vw;margin:10px auto;"></div>
-      <div id="recTongueLegend" style="font-size:10px;color:var(--text-dim);text-align:center;line-height:1.3;margin:-2px auto 8px;max-width:260px;"><span style="color:#CBA35C">━</span> Paladar &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#F1E9DC;border:1px solid #5C8C77;vertical-align:middle"></span> Dientes &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#B4432E;vertical-align:middle"></span> Lengua &nbsp; <span style="color:#CBA35C">///</span> Aire</div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:10px auto;max-width:420px;">
+        <div id="recTongueDiagram" style="width:160px;height:120px;flex-shrink:0;"></div>
+        <div id="recTongueLegend" style="font-size:10px;color:var(--text-dim);text-align:left;line-height:1.4;max-width:160px;"><span style="color:#CBA35C">━</span> Paladar<br><span style="display:inline-block;width:10px;height:8px;background:#F1E9DC;border:1px solid #5C8C77;vertical-align:middle"></span> Dientes<br><span style="display:inline-block;width:10px;height:8px;background:#B4432E;vertical-align:middle"></span> Lengua<br><span style="color:#CBA35C">///</span> Aire</div>
+      </div>
       <div class="quiz-stage" style="padding-top:6px;">
         <div class="quiz-han" id="recHan">…</div>
         <button class="bigplay" id="recPlayNative">&#9654; Nativo</button>

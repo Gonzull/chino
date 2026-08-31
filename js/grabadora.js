@@ -8,7 +8,7 @@ function initGrabadora(vocab, sibGroups) {
   let filteredWords = words;
 
   function getSound(pin) {
-    if (!pin) return 'sh';
+    if (!pin) return null;
     let p = pin.toLowerCase().trim().split(' ')[0].normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     if (p.startsWith('zh')) return 'zh';
     if (p.startsWith('ch')) return 'ch';
@@ -20,7 +20,7 @@ function initGrabadora(vocab, sibGroups) {
     if (p.startsWith('j')) return 'j';
     if (p.startsWith('q')) return 'q';
     if (p.startsWith('x')) return 'x';
-    return 'sh';
+    return null;
   }
 
   function updateDiagram() {
