@@ -98,13 +98,11 @@ function initCorreccion(words) {
     recognition = createRecognition();
 
     el('corrMicBtn').addEventListener('click', () => {
-      try {
-        recognition.start();
-      } catch (e) {
-        // Android queda en estado started tras primer uso, recrear instancia
-        recognition = createRecognition();
-        try { recognition.start(); } catch {}
-      }
+      try { recognition.abort(); } catch {}
+      clearTimeout(listenTimeout);
+      el('corrMicBtn').style.background = 'var(--jade)';
+      recognition = createRecognition();
+      try { recognition.start(); } catch (e) { el('corrStatus').textContent = 'No se pudo iniciar: ' + e.message; }
     });
   } else {
     el('corrUnsupported').style.display = 'flex';
