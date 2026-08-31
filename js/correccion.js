@@ -23,7 +23,7 @@ function initCorreccion(words) {
     if (!dia) {
       const wrapper = document.createElement('div');
       wrapper.id = 'tongueWrapper';
-      wrapper.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:10px auto;max-width:420px;';
+      wrapper.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:22px auto 10px;max-width:420px;';
       dia = document.createElement('div');
       dia.id = 'tongueDiagram';
       dia.style.cssText = 'width:160px;height:160px;flex-shrink:0;';
