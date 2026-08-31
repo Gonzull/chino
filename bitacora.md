@@ -1,9 +1,9 @@
 # Bitácora del Proyecto Entrenador de Mandarín
 
-## Versión actual: 1.0.5 (31 de agosto de 2026 - noche, tonos learning)
+## Versión actual: 1.0.6 (31 de agosto de 2026 - noche, tonos sweetspot 0.55)
 
 ### Estado general
-Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Requiere servidor local o GitHub Pages, offline vía Service Worker v2. Voz TTS learning 0.5/calm 0.60/default 0.70 (tonos ahora en learning, corrección en calm). Corrección y grabadora con diagramas lengua SVG sibilantes (10) responsive + leyenda lateral. Grabadora y tonos con filtro HSK 1-5/Todos (tonos solo singulares 972/3909). Animación escritura loop 800ms resuelta. Layout sin solapamiento.
+Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Requiere servidor local o GitHub Pages, offline vía Service Worker v2. Voz TTS learning 0.55/calm 0.60/default 0.70 (tonos en learning 0.55, corrección en calm 0.60). Corrección y grabadora con diagramas lengua SVG sibilantes responsive. Grabadora y tonos con filtro HSK 1-5/Todos (tonos solo singulares 972/3909). Animación loop 800ms resuelta.
 
 ### Qué se hizo (Cronología resumida)
 
@@ -104,6 +104,9 @@ Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Req
 **31 de agosto de 2026 - Tonos en learning y validación singulares (commit 6ddcc36)**
 - `js/tonos.js:61,95` `speak(current.han)` → `speak(current.han,{learning:true})` (0.5 rate) para tonos ultra lento
 - Validación: `tonos.js:36-42` filtra `w.han.length===1 && w.tone!==5` → 972 singulares de 3.909 totales (HSK1:190, HSK2:93, HSK3:161, HSK4:230, HSK5:298) → 946 con tono 1-4; filtro HSK por `w.level` OK, solo singulares intencional (compuestas confundirían quiz de tono único)
+
+**31 de agosto de 2026 - Tune tonos learning sweetspot 0.55 (commit a5012d6)**
+- `js/tts.js:28` `learning` 0.5→0.55 (pitch 0.8 se mantiene) — usuario reporta 0.55 cerca del sweetspot para tonos, más ágil que 0.5 pero aún ultra claro
 
 **30 de agosto de 2026 - Interfaz y CSS profesional**
 - `styles.css` con chips SRS, banner `load-error`, estadísticas en grid 2x2
@@ -276,9 +279,9 @@ Proyecto completado y funcional (4.269 HSK + 89 corrección, 90% estándar). Req
 **Modificado de lo original:**
 - `entrenador-mandarin (4).html` - Mantenedo como backup/referencia
 - `js/data.js` - Arreglo estructura JSON y TypeError `pin is undefined`
-- `js/tonos.js` - Import `speak` + TTS `learning:true` (0.5) para tonos ultra lento (solo singulares 972/3909)
+- `js/tonos.js` - Import `speak` + TTS `learning:true` (0.55 sweetspot, pitch 0.8) para tonos ultra lento (solo singulares 972/3909) - tune a5012d6
 - `js/grabadora.js` - Niveles 4/5 + filtro HSK 1-5/Todos + diagrama lengua sibilantes (120 PC/90 móvil, margin 36px, placeholder no-sibilantes)
-- `js/tts.js` - Mejora voz: learning 0.5/0.8, calm 0.75→0.60, default 0.70/0.95
+- `js/tts.js` - Mejora voz: learning 0.5→0.55/0.8, calm 0.75→0.60, default 0.70/0.95
 - `js/correccion.js` - TTS calm + expansión 19→89 + fallback móvil IA 40MB + diagrama 160/120 + leyenda lateral flex
 - `js/tongueDiagrams.js` - Nuevo: 10 SVGs sibilantes (zh/ch/sh/z/c/s/j/q/x/r) + placeholder "Sin diagrama"
 - `js/escritura.js` - Loop animación isLooping/onComplete 800ms (31 líneas)
@@ -339,12 +342,13 @@ O simplemente: `npx http-server` estando en la carpeta.
 2. **Verificado corrección:** PC nativo OK, Android IA 40MB OK (precisión según pronunciación) - commits e337000/fb9859c/53bbcae/1525d06
 3. **Verificado diagramas lengua + grabadora filtro:** 8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807 OK - SVG sibilantes + placeholder + leyenda lateral + filtro HSK 4.269 + fix overlap 36px + tamaño 120/90 grabadora
 4. **Verificado tonos learning:** 6ddcc36 OK - TTS learning 0.5 para tonos, solo singulares 972/3909 intencional (w.han.length===1)
-5. **Probar GitHub Pages:** `https://TU_USUARIO.github.io/entrenador-mandarin/` carga TTS learning, vocabulario 4.269 y diagramas sin solapamiento
-6. **Opcional:** Completar 481 palabras HSK 1-5 (90%→100%) + PWA offline
+5. **Tune tonos sweetspot:** a5012d6 - learning 0.55 (pitch 0.8 se mantiene) cerca del sweetspot
+6. **Probar GitHub Pages:** `https://TU_USUARIO.github.io/entrenador-mandarin/` carga TTS learning 0.55, vocabulario 4.269 y diagramas sin solapamiento
+7. **Opcional:** Completar 481 palabras HSK 1-5 (90%→100%) + PWA offline
 
 ### Contacto / Soporte
 Para dudas sobre la ejecución o extensiones del proyecto, revisar este bitácora.md o modificar los archivos JS según necesidad. El proyecto está diseñado para ser mantenido y ampliado por desarrolladores con conocimientos básicos de JavaScript.
 
 ---
 
-*Bitácora generada y actualizada el 31 de agosto de 2026 noche (1.0.5). Proyecto con 4.269 HSK (90%) + 89 corrección (solo singulares 972/3909 en tonos intencional), TTS learning 0.5/calm 0.60/default 0.70 (tonos en learning), fallback IA 40MB móvil, diagramas lengua SVG + grabadora filtro HSK. Fixes Bugs 6-9 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06/8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807/6ddcc36. Requiere servidor local o GitHub Pages; offline vía Service Worker v2.*
+*Bitácora generada y actualizada el 31 de agosto de 2026 noche (1.0.6). Proyecto con 4.269 HSK (90%) + 89 corrección (solo singulares 972/3909 en tonos intencional), TTS learning 0.55/calm 0.60/default 0.70 (tonos en learning 0.55 sweetspot), fallback IA 40MB móvil, diagramas lengua SVG + grabadora filtro HSK. Fixes Bugs 6-9 y mejoras commits 0e70b2e/e337000/53bbcae/fb9859c/ed4fa64/1525d06/8e3b63f/fe6b1c3/3616978/516456f/4a3dcc7/752c6f7/43ca807/6ddcc36/a5012d6. Requiere servidor local o GitHub Pages; offline vía Service Worker v2.*
