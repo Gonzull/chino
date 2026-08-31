@@ -56,40 +56,55 @@ function initCorreccion(words) {
   }
 
   if (SpeechRec) {
-    recognition = new SpeechRec();
-    recognition.lang = 'zh-CN';
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.maxAlternatives = 5;
-
-    recognition.onstart = () => {
-      el('corrStatus').textContent = 'Escuchando…';
-      el('corrMicBtn').style.background = 'var(--seal)';
-    };
-    recognition.onresult = event => {
-      const alts = [];
-      for (let i = 0; i < event.results[0].length; i++) {
-        alts.push(event.results[0][i].transcript);
-      }
-      evaluate(alts);
-    };
-    recognition.onerror = event => {
-      const status = el('corrStatus');
-      if (event.error === 'no-speech') status.textContent = 'No se detectó voz. Intenta de nuevo.';
-      else if (event.error === 'not-allowed' || event.error === 'permission-denied')
-        status.textContent = 'Permiso de micrófono denegado. Revisa los ajustes del navegador.';
-      else if (event.error === 'network')
-        status.textContent = 'Error de red — el reconocimiento de voz necesita conexión a internet.';
-      else status.textContent = 'Ocurrió un error. Intenta de nuevo.';
-    };
-    recognition.onend = () => {
-      el('corrMicBtn').style.background = 'var(--jade)';
-    };
+    let listenTimeout = null;
+    function createRecognition() {
+      const rec = new SpeechRec();
+      rec.lang = 'zh-CN';
+      rec.continuous = false;
+      rec.interimResults = false;
+      rec.maxAlternatives = 5;
+      rec.onstart = () => {
+        el('corrStatus').textContent = 'Escuchando…';
+        el('corrMicBtn').style.background = 'var(--seal)';
+        clearTimeout(listenTimeout);
+        listenTimeout = setTimeout(() => { try { rec.stop(); } catch {} }, 5000);
+      };
+      rec.onresult = event => {
+        clearTimeout(listenTimeout);
+        const alts = [];
+        for (let i = 0; i < event.results[0].length; i++) {
+          alts.push(event.results[0][i].transcript);
+        }
+        evaluate(alts);
+      };
+      rec.onerror = event => {
+        clearTimeout(listenTimeout);
+        const status = el('corrStatus');
+        if (event.error === 'no-speech') status.textContent = 'No se detectó voz. Intenta de nuevo.';
+        else if (event.error === 'not-allowed' || event.error === 'permission-denied')
+          status.textContent = 'Permiso de micrófono denegado. Revisa los ajustes del navegador.';
+        else if (event.error === 'network')
+          status.textContent = 'Error de red — el reconocimiento de voz necesita conexión a internet.';
+        else if (event.error === 'aborted') status.textContent = 'Escucha abortada. Intenta de nuevo.';
+        else status.textContent = 'Ocurrió un error (' + event.error + '). Intenta de nuevo.';
+      };
+      rec.onend = () => {
+        clearTimeout(listenTimeout);
+        el('corrMicBtn').style.background = 'var(--jade)';
+      };
+      rec.onspeechend = () => { try { rec.stop(); } catch {} };
+      return rec;
+    }
+    recognition = createRecognition();
 
     el('corrMicBtn').addEventListener('click', () => {
       try {
         recognition.start();
-      } catch (e) {}
+      } catch (e) {
+        // Android queda en estado started tras primer uso, recrear instancia
+        recognition = createRecognition();
+        try { recognition.start(); } catch {}
+      }
     });
   } else {
     el('corrUnsupported').style.display = 'flex';
