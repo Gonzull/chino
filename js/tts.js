@@ -30,7 +30,7 @@ function speak(text, opts={}){
   }
   // Voz más calmada: reducir velocidad y añadir una pausa breve
   else if (opts.calm) {
-    u.rate = 0.75;
+    u.rate = 0.60;
     u.pitch = 0.9;
   }
   // Velocidad rápida

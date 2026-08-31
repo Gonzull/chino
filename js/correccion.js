@@ -97,7 +97,7 @@ function initCorreccion(words) {
     el('corrMicBtn').style.opacity = '.4';
   }
 
-  el('corrListen').addEventListener('click', () => speak(current.han));
+  el('corrListen').addEventListener('click', () => speak(current.han, { calm: true }));
   el('corrNext').addEventListener('click', showWord);
   showWord();
 }
