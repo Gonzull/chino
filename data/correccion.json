@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updated": "2026-08-24",
+  "version": 2,
+  "updated": "2026-08-31",
   "words": [
     {
       "han": "十",
@@ -331,6 +331,1266 @@
           "han": "组",
           "pin": "zǔ",
           "note": "Sonó como \"z\" dental. Para \"j\" la lengua se eleva más, en el paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "这",
+      "pin": "zhè",
+      "es": "esto / aquí",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "住",
+      "pin": "zhù",
+      "es": "vivir",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "这",
+      "pin": "zhè",
+      "es": "esto / aquí",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "真",
+      "pin": "zhēn",
+      "es": "realmente",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "只",
+      "pin": "zhǐ",
+      "es": "solo / únicamente",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "住",
+      "pin": "zhù",
+      "es": "vivir",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "站",
+      "pin": "zhàn",
+      "es": "estación",
+      "sound": "zh",
+      "confusions": [
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para zh curva la lengua hacia atrás."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para zh la lengua se curva hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "吃",
+      "pin": "chī",
+      "es": "comer",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "唱",
+      "pin": "chàng",
+      "es": "cantar",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "车",
+      "pin": "chē",
+      "es": "coche",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "穿",
+      "pin": "chuān",
+      "es": "vestir",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "出",
+      "pin": "chū",
+      "es": "salir",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "床",
+      "pin": "chuáng",
+      "es": "cama",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "差",
+      "pin": "chà",
+      "es": "malo / faltar",
+      "sound": "ch",
+      "confusions": [
+        {
+          "han": "擦",
+          "pin": "cā",
+          "note": "Sonó como c dental. Ch necesita lengua curvada y aire fuerte."
+        },
+        {
+          "han": "掐",
+          "pin": "qiā",
+          "note": "Sonó como q palatal. Para ch curva la lengua hacia atrás."
+        }
+      ]
+    },
+    {
+      "han": "谁",
+      "pin": "shuí",
+      "es": "quién",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "上",
+      "pin": "shàng",
+      "es": "arriba",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "水",
+      "pin": "shuǐ",
+      "es": "agua",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "少",
+      "pin": "shǎo",
+      "es": "poco",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "上",
+      "pin": "shàng",
+      "es": "arriba",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "少",
+      "pin": "shǎo",
+      "es": "poco",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "谁",
+      "pin": "shuí",
+      "es": "quién",
+      "sound": "sh",
+      "confusions": [
+        {
+          "han": "苏",
+          "pin": "sū",
+          "note": "Sonó como s dental. Curva la lengua hacia atrás para sh."
+        },
+        {
+          "han": "须",
+          "pin": "xū",
+          "note": "Sonó como x palatal. Para sh la lengua va curvada."
+        }
+      ]
+    },
+    {
+      "han": "在",
+      "pin": "zài",
+      "es": "en",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "字",
+      "pin": "zì",
+      "es": "carácter",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "做",
+      "pin": "zuò",
+      "es": "hacer",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "坐",
+      "pin": "zuò",
+      "es": "sentarse",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "再",
+      "pin": "zài",
+      "es": "otra vez",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "在",
+      "pin": "zài",
+      "es": "en",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "早",
+      "pin": "zǎo",
+      "es": "temprano",
+      "sound": "z",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para z lengua plana detrás dientes."
+        },
+        {
+          "han": "鸡",
+          "pin": "jī",
+          "note": "Sonó como j palatal. Para z lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "菜",
+      "pin": "cài",
+      "es": "verdura / platillo",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "次",
+      "pin": "cì",
+      "es": "vez",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "从",
+      "pin": "cóng",
+      "es": "desde",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "错",
+      "pin": "cuò",
+      "es": "equivocado",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "草",
+      "pin": "cǎo",
+      "es": "pasto",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "层",
+      "pin": "céng",
+      "es": "piso / capa",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "擦",
+      "pin": "cā",
+      "es": "limpiar / frotar",
+      "sound": "c",
+      "confusions": [
+        {
+          "han": "迟",
+          "pin": "chí",
+          "note": "Sonó como ch retrofleja. Para c lengua plana detrás dientes."
+        },
+        {
+          "han": "骑",
+          "pin": "qí",
+          "note": "Sonó como q palatal. Para c lengua justo detrás dientes."
+        }
+      ]
+    },
+    {
+      "han": "三",
+      "pin": "sān",
+      "es": "tres",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "四",
+      "pin": "sì",
+      "es": "cuatro",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "岁",
+      "pin": "suì",
+      "es": "años (edad)",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "三",
+      "pin": "sān",
+      "es": "tres",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "四",
+      "pin": "sì",
+      "es": "cuatro",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "岁",
+      "pin": "suì",
+      "es": "años (edad)",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "送",
+      "pin": "sòng",
+      "es": "regalar / enviar",
+      "sound": "s",
+      "confusions": [
+        {
+          "han": "十",
+          "pin": "shí",
+          "note": "Sonó como sh retrofleja. Para s lengua plana detrás dientes."
+        },
+        {
+          "han": "西",
+          "pin": "xī",
+          "note": "Sonó como x palatal. Para s lengua más adelante."
+        }
+      ]
+    },
+    {
+      "han": "几",
+      "pin": "jǐ",
+      "es": "cuántos",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "九",
+      "pin": "jiǔ",
+      "es": "nueve",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "叫",
+      "pin": "jiào",
+      "es": "llamarse",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "见",
+      "pin": "jiàn",
+      "es": "ver",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "件",
+      "pin": "jiàn",
+      "es": "(clasificador para cosas)",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "九",
+      "pin": "jiǔ",
+      "es": "nueve",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "间",
+      "pin": "jiān",
+      "es": "(clasificador de habitaciones)",
+      "sound": "j",
+      "confusions": [
+        {
+          "han": "知",
+          "pin": "zhī",
+          "note": "Sonó como zh retrofleja. Para j lengua plana, no curvada."
+        },
+        {
+          "han": "姿",
+          "pin": "zī",
+          "note": "Sonó como z dental. Para j lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "七",
+      "pin": "qī",
+      "es": "siete",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "钱",
+      "pin": "qián",
+      "es": "dinero",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "请",
+      "pin": "qǐng",
+      "es": "por favor",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "七",
+      "pin": "qī",
+      "es": "siete",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "前",
+      "pin": "qián",
+      "es": "delante / antes",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "千",
+      "pin": "qiān",
+      "es": "mil",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "请",
+      "pin": "qǐng",
+      "es": "por favor",
+      "sound": "q",
+      "confusions": [
+        {
+          "han": "长",
+          "pin": "cháng",
+          "note": "Sonó como ch retrofleja. Para q lengua plana sin curvar."
+        },
+        {
+          "han": "藏",
+          "pin": "cáng",
+          "note": "Sonó como c dental. Para q lengua en paladar medio con sonrisa leve."
+        }
+      ]
+    },
+    {
+      "han": "些",
+      "pin": "xiē",
+      "es": "algunos",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "下",
+      "pin": "xià",
+      "es": "abajo",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "写",
+      "pin": "xiě",
+      "es": "escribir",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "想",
+      "pin": "xiǎng",
+      "es": "querer / pensar",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "小",
+      "pin": "xiǎo",
+      "es": "pequeño",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "下",
+      "pin": "xià",
+      "es": "abajo",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "想",
+      "pin": "xiǎng",
+      "es": "querer / pensar",
+      "sound": "x",
+      "confusions": [
+        {
+          "han": "商",
+          "pin": "shāng",
+          "note": "Sonó como sh retrofleja. Para x lengua plana adelante."
+        },
+        {
+          "han": "桑",
+          "pin": "sāng",
+          "note": "Sonó como s dental. Para x lengua más atrás en paladar medio."
+        }
+      ]
+    },
+    {
+      "han": "日",
+      "pin": "rì",
+      "es": "día",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "人",
+      "pin": "rén",
+      "es": "persona",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "热",
+      "pin": "rè",
+      "es": "caliente",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "热",
+      "pin": "rè",
+      "es": "caliente",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "人",
+      "pin": "rén",
+      "es": "persona",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "日",
+      "pin": "rì",
+      "es": "día",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
+        }
+      ]
+    },
+    {
+      "han": "让",
+      "pin": "ràng",
+      "es": "dejar / permitir",
+      "sound": "r",
+      "confusions": [
+        {
+          "han": "力",
+          "pin": "lì",
+          "note": "Sonó como l lateral. Para r vibra suave sin tocar paladar."
+        },
+        {
+          "han": "日",
+          "pin": "rì",
+          "note": "Mantén r retrofleja suave, no como l."
         }
       ]
     }
