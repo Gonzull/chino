@@ -97,12 +97,16 @@ function initCorreccion(words) {
     }
     recognition = createRecognition();
 
-    el('corrMicBtn').addEventListener('click', () => {
+    el('corrMicBtn').addEventListener('click', async () => {
       el('corrMicBtn').disabled = true;
       try { recognition.abort(); } catch {}
       clearTimeout(listenTimeout);
       el('corrMicBtn').style.background = 'var(--jade)';
       el('corrStatus').textContent = 'Reiniciando micrófono…';
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        stream.getTracks().forEach(t => t.stop());
+      } catch {}
       setTimeout(() => {
         recognition = createRecognition();
         try { recognition.start(); } catch (e) { el('corrStatus').textContent = 'No se pudo iniciar (' + e.message + '). Toca de nuevo.'; }
