@@ -64,7 +64,8 @@ function initEscritura(vocab) {
   let index = 0;
   let writerInstance = null;
   let currentWord = null;
-  let animationPaused = false;
+  let isLooping = false;
+  let loopTimeout = null;
 
   const el = id => document.getElementById(id);
 
@@ -139,7 +140,24 @@ function initEscritura(vocab) {
       .catch(onError);
   }
 
+  function stopLoop() {
+    isLooping = false;
+    if (loopTimeout) { clearTimeout(loopTimeout); loopTimeout = null; }
+    const btn = el('hanziShow');
+    if (btn) btn.textContent = '▶ Ver animación';
+  }
+
+  function loopAnimation() {
+    if (!isLooping || !writerInstance) return;
+    writerInstance.animateCharacter({
+      onComplete: () => {
+        if (isLooping) loopTimeout = setTimeout(loopAnimation, 800);
+      }
+    });
+  }
+
   function renderWord(w) {
+    stopLoop();
     currentWord = w;
     const target = el('hanziTarget');
     el('hanziMeta').textContent =
@@ -168,6 +186,7 @@ function initEscritura(vocab) {
   }
 
   function pickNext() {
+    stopLoop();
     pool = wordPool();
     if (!pool.length) {
       el('hanziTarget').innerHTML =
@@ -192,17 +211,21 @@ function initEscritura(vocab) {
   });
 
   el('hanziShow').addEventListener('click', () => {
-    if (writerInstance && !animationPaused) {
-      writerInstance.animateCharacter();
-      animationPaused = true;
-      el('hanziShow').textContent = 'Detener animación';
-    } else if (writerInstance && animationPaused) {
-      animationPaused = false;
-      el('hanziShow').textContent = 'Ver animación';
+    if (!writerInstance || !currentWord) return;
+    if (!isLooping) {
+      isLooping = true;
+      el('hanziShow').textContent = '■ Detener';
+      setStatus('Reproduciendo en loop - pulsa Detener para pausar');
+      loopAnimation();
+    } else {
+      stopLoop();
+      try { writerInstance.showCharacter(); } catch {}
+      setStatus('Animación detenida. Pulsa "Ver animación" para reiniciar el loop.');
     }
   });
 
   el('hanziQuiz').addEventListener('click', () => {
+    stopLoop();
     if (!writerInstance || !currentWord) return;
     setStatus('Dibuja cada trazo en orden. Si te equivocas, se corrige automáticamente.');
     writerInstance.quiz({
