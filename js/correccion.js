@@ -55,7 +55,66 @@ function initCorreccion(words) {
     updateScore();
   }
 
-  if (SpeechRec) {
+  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  if (isMobile) {
+    el('corrAI').style.display = 'flex';
+    let whisperPipe = null;
+    let whisperLoading = false;
+    let mediaRecorder = null;
+    let chunks = [];
+    async function getWhisper() {
+      if (whisperPipe) return whisperPipe;
+      if (whisperLoading) return null;
+      whisperLoading = true;
+      el('corrStatus').textContent = 'Descargando modelo IA 40MB (primera vez, una sola vez)…';
+      try {
+        const { pipeline } = await import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2/dist/transformers.min.js');
+        whisperPipe = await pipeline('automatic-speech-recognition', 'Xenova/whisper-tiny');
+        el('corrStatus').textContent = 'Modelo IA listo. Toca el micrófono y habla.';
+      } catch (e) {
+        el('corrStatus').textContent = 'Error cargando IA: ' + e.message;
+      }
+      whisperLoading = false;
+      return whisperPipe;
+    }
+    el('corrMicBtn').addEventListener('click', async () => {
+      if (mediaRecorder && mediaRecorder.state === 'recording') {
+        try { mediaRecorder.stop(); } catch {}
+        return;
+      }
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        chunks = [];
+        mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' });
+        mediaRecorder.ondataavailable = e => { if (e.data.size) chunks.push(e.data); };
+        mediaRecorder.onstop = async () => {
+          stream.getTracks().forEach(t => t.stop());
+          el('corrMicBtn').style.background = 'var(--jade)';
+          if (!chunks.length) { el('corrStatus').textContent = 'No se grabó audio. Intenta de nuevo.'; return; }
+          const blob = new Blob(chunks, { type: 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          el('corrStatus').textContent = 'Transcribiendo con IA…';
+          try {
+            const pipe = await getWhisper();
+            if (!pipe) return;
+            const res = await pipe(url, { language: 'chinese', task: 'transcribe' });
+            URL.revokeObjectURL(url);
+            const text = (res.text || '').trim();
+            if (!text) { el('corrStatus').textContent = 'No se reconoció voz. Intenta de nuevo.'; return; }
+            evaluate([text]);
+          } catch (e) {
+            el('corrStatus').textContent = 'Error IA: ' + e.message;
+          }
+        };
+        mediaRecorder.start();
+        el('corrStatus').textContent = 'Escuchando… (habla ahora, 3s)';
+        el('corrMicBtn').style.background = 'var(--seal)';
+        setTimeout(() => { try { if (mediaRecorder.state === 'recording') mediaRecorder.stop(); } catch {} }, 3500);
+      } catch (e) {
+        el('corrStatus').textContent = 'Permiso de micrófono denegado.';
+      }
+    });
+  } else if (SpeechRec) {
     let listenTimeout = null;
     function createRecognition() {
       const rec = new SpeechRec();
@@ -96,7 +155,6 @@ function initCorreccion(words) {
       return rec;
     }
     recognition = createRecognition();
-
     el('corrMicBtn').addEventListener('click', async () => {
       el('corrMicBtn').disabled = true;
       try { recognition.abort(); } catch {}
