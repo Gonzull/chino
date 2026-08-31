@@ -64,6 +64,7 @@ function initEscritura(vocab) {
   let index = 0;
   let writerInstance = null;
   let currentWord = null;
+  let animationPaused = false;
 
   const el = id => document.getElementById(id);
 
@@ -191,7 +192,17 @@ function initEscritura(vocab) {
   });
 
   el('hanziShow').addEventListener('click', () => {
-    if (writerInstance) writerInstance.animateCharacter();
+    if (writerInstance && !animationPaused) {
+      writerInstance.animateCharacter();
+    } else if (writerInstance && animationPaused) {
+      writerInstance.play();
+      animationPaused = false;
+      el('hanziShow').textContent = 'Ver animación';
+    } else {
+      writerInstance = HanziWriter.create(target, currentWord.han, writerOptions());
+      writerInstance.animateCharacter();
+      el('hanziShow').textContent = 'Detener animación';
+    }
   });
 
   el('hanziQuiz').addEventListener('click', () => {
