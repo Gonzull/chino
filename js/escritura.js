@@ -194,9 +194,10 @@ function initEscritura(vocab) {
   el('hanziShow').addEventListener('click', () => {
     if (writerInstance && !animationPaused) {
       writerInstance.animateCharacter();
-      el('hanziShow').textContent = 'Detener animación';
-    } else {
       animationPaused = true;
+      el('hanziShow').textContent = 'Detener animación';
+    } else if (writerInstance && animationPaused) {
+      animationPaused = false;
       el('hanziShow').textContent = 'Ver animación';
     }
   });
