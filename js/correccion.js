@@ -1,4 +1,5 @@
 import { speak } from './tts.js';
+import { tongueDiagramSVG } from './tongueDiagrams.js';
 
 function stripPunct(s) {
   return s.replace(/[，。！？、\s.,!?]/g, '');
@@ -17,6 +18,16 @@ function initCorreccion(words) {
     el('corrHan').textContent = current.han;
     el('corrPinEs').textContent = `${current.pin} — ${current.es}`;
     el('corrSoundTag').textContent = current.sound;
+    // diagrama lengua 120x120 junto al sonido objetivo
+    let dia = el('tongueDiagram');
+    if (!dia) {
+      dia = document.createElement('div');
+      dia.id = 'tongueDiagram';
+      dia.style.cssText = 'width:120px;height:120px;margin:10px auto;';
+      const card = document.getElementById('corrCard');
+      if (card) card.insertBefore(dia, card.querySelector('.quiz-stage') || card.firstChild);
+    }
+    dia.innerHTML = tongueDiagramSVG(current.sound, 120, 120);
     el('corrFeedback').innerHTML = '';
     el('corrHeard').textContent = '';
     el('corrStatus').textContent = 'Toca el micrófono y di la palabra claramente.';

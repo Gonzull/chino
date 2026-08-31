@@ -1,4 +1,4 @@
-const CACHE_NAME = 'entrenador-chino-v1';
+const CACHE_NAME = 'entrenador-chino-v2';
 
 const APP_SHELL = [
   './',
@@ -15,6 +15,7 @@ const APP_SHELL = [
   './js/aspiracion.js',
   './js/grabadora.js',
   './js/correccion.js',
+  './js/tongueDiagrams.js',
   './js/escritura.js',
   './js/progreso.js',
   './data/hsk1.json',
