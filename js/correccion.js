@@ -18,16 +18,31 @@ function initCorreccion(words) {
     el('corrHan').textContent = current.han;
     el('corrPinEs').textContent = `${current.pin} — ${current.es}`;
     el('corrSoundTag').textContent = current.sound;
-    // diagrama lengua 120x120 junto al sonido objetivo
+    // diagrama lengua responsive + leyenda
     let dia = el('tongueDiagram');
     if (!dia) {
       dia = document.createElement('div');
       dia.id = 'tongueDiagram';
-      dia.style.cssText = 'width:120px;height:120px;margin:10px auto;';
+      dia.style.cssText = 'width:160px;height:160px;max-width:90vw;margin:10px auto;';
       const card = document.getElementById('corrCard');
       if (card) card.insertBefore(dia, card.querySelector('.quiz-stage') || card.firstChild);
+      // leyenda una sola vez
+      let legend = document.getElementById('tongueLegend');
+      if (!legend) {
+        legend = document.createElement('div');
+        legend.id = 'tongueLegend';
+        legend.style.cssText = 'font-size:10px;color:var(--text-dim);text-align:center;line-height:1.3;margin:-2px auto 8px;max-width:260px;';
+        legend.innerHTML = '<span style="color:#CBA35C">━</span> Paladar &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#F1E9DC;border:1px solid #5C8C77;vertical-align:middle"></span> Dientes &nbsp; <span style="display:inline-block;width:10px;height:8px;background:#B4432E;vertical-align:middle"></span> Lengua &nbsp; <span style="color:#CBA35C">///</span> Aire';
+        dia.after(legend);
+      }
+      // responsive: 160 en PC, 120 en móvil
+      const mql = window.matchMedia('(max-width: 600px)');
+      const applySize = () => { dia.style.width = mql.matches ? '120px' : '160px'; dia.style.height = mql.matches ? '120px' : '160px'; };
+      mql.addEventListener ? mql.addEventListener('change', applySize) : mql.addListener(applySize);
+      applySize();
     }
-    dia.innerHTML = tongueDiagramSVG(current.sound, 120, 120);
+    const isMobileDia = window.matchMedia('(max-width: 600px)').matches;
+    dia.innerHTML = tongueDiagramSVG(current.sound, isMobileDia ? 120 : 160, isMobileDia ? 120 : 160);
     el('corrFeedback').innerHTML = '';
     el('corrHeard').textContent = '';
     el('corrStatus').textContent = 'Toca el micrófono y di la palabra claramente.';
